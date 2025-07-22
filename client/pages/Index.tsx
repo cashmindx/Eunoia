@@ -338,7 +338,7 @@ export default function Index() {
       'ar': {
         "Hello, how are you doing today?": [
           "مرحبا! أنا بخير جداً، شكراً لسؤالك. من دواعي سروري أن ألتقي بك. كيف كان يومك؟",
-          "أهلا! أشعر بحالة ممتازة اليوم. وأنت، كي�� حالك؟",
+          "أهلا! أشعر بحالة ممتازة اليوم. وأنت، كيف حالك؟",
           "مرحبا! كل شيء يسير بشكل رائع هنا. شكراً لتحيتك اللطيفة. كيف كان يومك؟"
         ]
       },
@@ -758,14 +758,15 @@ export default function Index() {
       name: "Basic",
       price: "Free",
       period: "",
-      description: "Travelers and learners",
+      description: "Very limited trial",
       features: [
         "Voice Translation",
-        "Phrasebook",
-        "5 min/day calls, 20 messages/day",
+        "Basic Phrasebook",
+        "5 min/day calls ONLY",
+        "2 messages total, then upgrade required",
         "Ads"
       ],
-      cta: "Get Started",
+      cta: "Try Free (Limited)",
       popular: false
     },
     {
