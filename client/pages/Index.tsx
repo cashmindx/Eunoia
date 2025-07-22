@@ -261,11 +261,6 @@ export default function Index() {
           "¡Hola! Estoy muy bien, gracias por preguntar. Es un placer conocerte. ¿Cómo ha sido tu día?",
           "¡Qué gusto saludarte! Me siento excelente hoy. ¿Y tú, cómo te encuentras?",
           "¡Hola! Todo va de maravilla por aquí. Gracias por tu amable saludo. ¿Qué tal tu día?"
-        ],
-        "Nice to meet you, I'm looking forward to our conversation.": [
-          "¡El placer es mío! También estoy emocionado de poder conversar contigo. ¿De qué te gustaría hablar?",
-          "¡Igualmente! Me encanta conocer gente nueva. Estoy seguro de que tendremos una conversación muy interesante.",
-          "¡Qué alegría conocerte! Yo también tengo muchas ganas de nuestra charla. ¿Hay algo específico que te interese?"
         ]
       },
       'fr': {
@@ -280,6 +275,76 @@ export default function Index() {
           "Hallo! Mir geht es sehr gut, danke der Nachfrage. Es ist eine Freude, Sie kennenzulernen. Wie war Ihr Tag?",
           "Hallo! Ich fühle mich heute ausgezeichnet. Und wie geht es Ihnen?",
           "Hallo! Hier läuft alles wunderbar. Danke für Ihre freundliche Begrüßung. Wie ist Ihr Tag verlaufen?"
+        ]
+      },
+      'zh': {
+        "Hello, how are you doing today?": [
+          "你好！我今天很好，谢谢你的问候。很高兴认识你。你今天过得怎么样？",
+          "你好！我感觉很棒。你呢，你好吗？",
+          "你好！我这里一切都很好。谢谢你友好的问候。你今天怎么样？"
+        ]
+      },
+      'ja': {
+        "Hello, how are you doing today?": [
+          "こんにちは！今日は元気です、お聞きいただきありがとうございます。お会いできて嬉しいです。今日はいかがでしたか？",
+          "こんにちは！今日は素晴らしい気分です。あなたはいかがですか？",
+          "こんにちは！こちらはすべて順調です。親切なご挨拶をありがとうございます。今日はどうでしたか？"
+        ]
+      },
+      'ar': {
+        "Hello, how are you doing today?": [
+          "مرحبا! أنا بخير جداً، شكراً لسؤالك. من دواعي سروري أن ألتقي بك. كيف كان يومك؟",
+          "أهلا! أشعر بحالة ممتازة اليوم. وأنت، كيف حالك؟",
+          "مرحبا! كل شيء يسير بشكل رائع هنا. شكراً لتحيتك اللطيفة. كيف كان يومك؟"
+        ]
+      },
+      'ko': {
+        "Hello, how are you doing today?": [
+          "안녕하세요! 오늘 정말 좋아요, 물어봐 주셔서 감사합니다. 만나서 반가워요. 오늘 어떠셨어요?",
+          "안녕하세요! 오늘 기분이 아주 좋아요. 당신은 어떠세요?",
+          "안녕하세요! 여기 모든 것이 훌륭해요. 친절한 인사 감사해요. 오늘 어땠어요?"
+        ]
+      },
+      'pt': {
+        "Hello, how are you doing today?": [
+          "Olá! Estou muito bem, obrigado por perguntar. É um prazer conhecê-lo. Como foi o seu dia?",
+          "Oi! Estou me sentindo excelente hoje. E você, como está?",
+          "Olá! Tudo está indo maravilhosamente aqui. Obrigado pela saudação amável. Como está o seu dia?"
+        ]
+      },
+      'it': {
+        "Hello, how are you doing today?": [
+          "Ciao! Sto molto bene, grazie per aver chiesto. È un piacere conoscerti. Com'è stata la tua giornata?",
+          "Ciao! Mi sento eccellente oggi. E tu, come stai?",
+          "Ciao! Tutto va meravigliosamente qui. Grazie per il gentile saluto. Com'è la tua giornata?"
+        ]
+      },
+      'ru': {
+        "Hello, how are you doing today?": [
+          "Привет! У меня всё очень хорошо, спасибо что спросили. Приятно познакомиться. Как прошёл ваш день?",
+          "Привет! Я сегодня прекрасно себя чувствую. А как дела у вас?",
+          "Привет! Здесь всё замечательно. Спасибо за доброе приветствие. Как ваш день?"
+        ]
+      },
+      'hi': {
+        "Hello, how are you doing today?": [
+          "नमस्ते! मैं आज बहुत अच्छा हूँ, पूछने के लिए धन्यवाद। आपसे मिलकर खुशी हुई। आपका दिन कैसा रहा?",
+          "हैलो! मैं आज बेहतरीन महसूस कर रहा हूँ। और आप कैसे हैं?",
+          "नमस्ते! यहाँ सब कुछ बहुत अच्छा चल रहा है। आपके मिलनसार अभिवादन के लिए धन्यवाद। आपका दिन कैसा रहा?"
+        ]
+      },
+      'th': {
+        "Hello, how are you doing today?": [
+          "สวัสดีครับ! วันนี้ผมสบายดีมากครับ ขอบคุณที่ถาม ยินดีที่ได้รู้จักครับ วันนี้เป็นอย่างไรบ้างครับ?",
+          "สวัสดี! วันนี้รู้สึกดีมากเลยครับ แล้วคุณล่ะครับ เป็นอย่างไรบ้าง?",
+          "สวัสดีครับ! ที่นี่ทุกอย่างเป็นไปด้วยดีมากครับ ขอบคุณสำหรับคำทักทายที่น่ารักครับ วันนี้เป็นอย่างไรบ้างครับ?"
+        ]
+      },
+      'vi': {
+        "Hello, how are you doing today?": [
+          "Xin chào! Hôm nay tôi rất khỏe, cảm ơn bạn đã hỏi. Rất vui được gặp bạn. Ngày hôm nay của bạn thế nào?",
+          "Chào bạn! Hôm nay tôi cảm thấy tuyệt vời. Còn bạn thì sao?",
+          "Xin chào! Mọi thứ ở đây đều tuyệt vời. Cảm ơn lời chào thân thiện của bạn. Ngày của bạn như th��� nào?"
         ]
       }
     };
