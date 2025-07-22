@@ -365,10 +365,10 @@ export default function Index() {
                 <div className="glass-effect p-8 rounded-2xl border border-border/50">
                   <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center space-x-3">
-                      <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
-                      <span className="text-sm font-medium">Recording...</span>
+                      <div className={`w-3 h-3 rounded-full ${isRecording ? 'bg-red-500 animate-pulse' : 'bg-gray-500'}`}></div>
+                      <span className="text-sm font-medium">{isRecording ? 'Recording...' : audioBlob ? 'Recording Complete' : 'Ready to Record'}</span>
                     </div>
-                    <div className="text-sm text-muted-foreground">2:34</div>
+                    <div className="text-sm text-muted-foreground">{formatTime(recordingTime)}</div>
                   </div>
 
                   <div className="space-y-4">
