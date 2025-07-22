@@ -169,7 +169,7 @@ export default function Index() {
         "Hello, how are you doing today?": [
           "¡Hola! Estoy muy bien, gracias por preguntar. Es un placer conocerte. ¿Cómo ha sido tu día?",
           "¡Qué gusto saludarte! Me siento excelente hoy. ¿Y tú, cómo te encuentras?",
-          "¡Hola! Todo va de maravilla por aquí. Gracias por tu amable saludo. ¿Qué tal tu día?"
+          "��Hola! Todo va de maravilla por aquí. Gracias por tu amable saludo. ¿Qué tal tu día?"
         ],
         "Nice to meet you, I'm looking forward to our conversation.": [
           "¡El placer es mío! También estoy emocionado de poder conversar contigo. ¿De qué te gustaría hablar?",
@@ -706,9 +706,28 @@ export default function Index() {
                       disabled={!audioBlob}
                     >
                       <HeadphonesIcon className="w-4 h-4 mr-2" />
-                      {audioBlob ? 'Play Audio' : 'No Audio'}
+                      {audioBlob ? 'Play Recording' : 'No Audio'}
                     </Button>
-                    <Button variant="outline" size="sm" className="flex-1" onClick={() => alert('Export to spreadsheet feature coming soon!')}>
+
+                    {aiResponse && (
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="flex-1 bg-green-500/10 hover:bg-green-500/20"
+                        onClick={() => speakText(aiResponse, selectedLanguage)}
+                      >
+                        <Globe className="w-4 h-4 mr-2" />
+                        Replay AI Response
+                      </Button>
+                    )}
+
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="flex-1"
+                      onClick={() => alert('Export conversation logs to spreadsheet - Coming soon!')}
+                    >
+                      <BarChart3 className="w-4 h-4 mr-2" />
                       Export
                     </Button>
                   </div>
