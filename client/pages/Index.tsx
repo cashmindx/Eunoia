@@ -1102,6 +1102,35 @@ export default function Index() {
                   </div>
 
                   <div className="space-y-4">
+                    {capturedImage && (
+                      <div className="bg-blue-500/10 rounded-lg p-4 border-l-4 border-blue-500">
+                        <div className="text-sm text-muted-foreground mb-2">📷 Captured Image</div>
+                        <img src={capturedImage} alt="Captured" className="w-full rounded-lg mb-3 max-h-48 object-cover" />
+
+                        {isProcessingPhoto ? (
+                          <div className="text-blue-600 animate-pulse">🔍 Processing with AI OCR...</div>
+                        ) : extractedText ? (
+                          <>
+                            <div className="bg-white/10 rounded p-3 mb-3">
+                              <div className="text-xs text-muted-foreground mb-1">Extracted Text</div>
+                              <div className="text-sm font-mono whitespace-pre-line">{extractedText}</div>
+                            </div>
+
+                            {translatedPhoto && (
+                              <div className="bg-green-500/10 rounded p-3">
+                                <div className="text-xs text-muted-foreground mb-1">
+                                  Translation ({supportedLanguages.find(l => l.code === selectedLanguage)?.name})
+                                </div>
+                                <div className="text-sm font-mono whitespace-pre-line text-green-700 dark:text-green-300">
+                                  {translatedPhoto}
+                                </div>
+                              </div>
+                            )}
+                          </>
+                        ) : null}
+                      </div>
+                    )}
+
                     {isRecording ? (
                       <div className="bg-primary/10 rounded-lg p-4 border-l-4 border-primary animate-pulse">
                         <div className="text-sm text-muted-foreground mb-1">Listening...</div>
