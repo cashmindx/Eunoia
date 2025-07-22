@@ -336,7 +336,7 @@ export default function Index() {
       },
       'hi': {
         "Hello, how are you doing today?": [
-          "नमस्ते! मैं आज बहुत अच्छा हूँ, पूछने के लिए धन्यवाद। आपसे मिलकर खुशी हुई। आपका दिन कैसा रहा?",
+          "नमस्ते! मैं आज बहुत अच्छा हूँ, पूछने के लिए धन्यवाद। आपसे मिलकर ���ुशी हुई। आपका दिन कैसा रहा?",
           "हैलो! मैं आज बेहतरीन महसूस कर रहा हूँ। और आप कैसे हैं?",
           "नमस्ते! यहाँ सब कुछ बहुत अच्छा चल रहा है। आपके मिलनसार अभिवादन के लिए धन्यवाद। आपका दिन कैसा रहा?"
         ]
@@ -1197,8 +1197,20 @@ export default function Index() {
                     ) : (
                       <>
                         <div className="bg-primary/10 rounded-lg p-4">
-                          <div className="text-sm text-muted-foreground mb-1">Demo Example (English)</div>
+                          <div className="text-sm text-muted-foreground mb-1">🎙️ Voice Translation</div>
                           <div>"Hello, nice to meet you. How are you doing today?"</div>
+                          <div className="text-xs text-muted-foreground mt-1">→ Record your voice for instant translation</div>
+                        </div>
+
+                        <div className="bg-blue-500/10 rounded-lg p-4">
+                          <div className="text-sm text-muted-foreground mb-1">📷 Photo Translation Example</div>
+                          <div className="bg-white/10 rounded p-2 mb-2 font-mono text-sm">
+                            Menu del Día<br/>
+                            Paella €15<br/>
+                            Sangría €8<br/>
+                            Flan €4
+                          </div>
+                          <div className="text-xs text-muted-foreground">→ Take a photo to translate menus, signs, documents</div>
                         </div>
 
                         <div className="bg-accent/10 rounded-lg p-4">
@@ -1207,8 +1219,8 @@ export default function Index() {
                         </div>
 
                         <div className="bg-secondary/20 rounded-lg p-4">
-                          <div className="text-sm text-primary font-medium mb-1">🌍 AI Translation Available</div>
-                          <div className="text-sm">Record your voice and get instant AI translation + human-like responses in 12+ languages!</div>
+                          <div className="text-sm text-primary font-medium mb-1">🌍 Complete AI Translation Suite</div>
+                          <div className="text-sm">Voice + Photo translation in 100+ languages for business meetings, café conversations, travel, and more!</div>
                         </div>
                       </>
                     )}
