@@ -45,6 +45,11 @@ export default function Index() {
       icon: <MessageCircle className="w-6 h-6" />,
       title: "Conversation Summary",
       description: "Gives you a report on how the talk went and how to improve."
+    },
+    {
+      icon: <TrendingUp className="w-6 h-6" />,
+      title: "Export to Sheets",
+      description: "Download your conversation history and insights as spreadsheets to track progress or share with your team."
     }
   ];
 
