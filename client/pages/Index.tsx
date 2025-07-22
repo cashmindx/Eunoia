@@ -96,7 +96,7 @@ export default function Index() {
     { code: 'az', name: 'Azerbaijani', flag: '🇦🇿', region: 'Asia' },
     { code: 'kk', name: 'Kazakh', flag: '🇰🇿', region: 'Asia' },
     { code: 'ky', name: 'Kyrgyz', flag: '🇰🇬', region: 'Asia' },
-    { code: 'uz', name: 'Uzbek', flag: '���🇿', region: 'Asia' },
+    { code: 'uz', name: 'Uzbek', flag: '🇺🇿', region: 'Asia' },
     { code: 'tk', name: 'Turkmen', flag: '🇹🇲', region: 'Asia' },
     { code: 'tg', name: 'Tajik', flag: '🇹🇯', region: 'Asia' },
 
@@ -351,7 +351,7 @@ export default function Index() {
       },
       'hi': {
         "Hello, how are you doing today?": [
-          "नमस्ते! मैं आज बहुत अच्छा हूँ, पूछने के लिए धन्यवाद। आपसे मिलकर खुशी हुई। आपका दिन कैसा रहा?",
+          "नमस्ते! मैं आज बहुत अच्छा हूँ, पूछने के लिए धन्यवाद। आपसे मिलकर खुशी हुई। आपका द��न कैसा रहा?",
           "हैलो! मैं आज बेहतरीन महसूस कर रहा हूँ। और आप कैसे हैं?",
           "नमस्ते! यहाँ सब कुछ बहुत अच्छा चल रहा है। आपके मिलनसार अभिवादन के लिए धन्यवाद। आपका दिन कैसा रहा?"
         ]
@@ -402,6 +402,57 @@ export default function Index() {
           "Natuurlik! Ek sal graag wil help dat jy dit beter verstaan. Wat spesifiek wil jy hê moet ek verduidelik?",
           "Absoluut! Ek is hier om te help. Laat weet my asseblief waaroor jy verduideliking wil hê.",
           "Beslis! Ek sal my beste probeer om jou te help verstaan. Watter deel wil jy hê moet ek uitbrei?"
+        ]
+      },
+      'zu': {
+        "Hello, how are you doing today?": [
+          "Sawubona! Ngikhona kahle namuhla, ngiyabonga ukubuza. Kuyajabulisa ukukubona. Usuku lwakho lunjani?",
+          "Yebo sawubona! Ngizizwa ngcono kakhulu namuhla. Wena-ke, unjani?",
+          "Sawubona! Konke kuhamba kahle lapha. Ngiyabonga ngokubingelela okuhle. Usuku lwakho lunjani?"
+        ],
+        "Nice to meet you, I'm looking forward to our conversation.": [
+          "Kuyajabulisa! Nami ngijabulela ukuxoxa nawe. Yini ongathanda ukuxoxa ngayo?",
+          "Nami njalo! Ngiyakuthanda ukuhlangana nabantu abasha. Ngazi ukuthi sizoba nenkulumo emnandi.",
+          "Kuyamangalisa ukukubona! Nami ngibheke phambili enkulumweni yethu. Kungabe kukhona okuqondile ongathanda ukukhuluma ngakho?"
+        ],
+        "Can you help me understand this better?": [
+          "Yebo! Ngiyajabula ukusiza ukuthi uqonde kangcono. Yini eqondile ongifuna ngikhulume ngayo?",
+          "Nqayizivele! Ngilapha ukusiza. Ngicela ungazise ukuthi yini ofuna ukucaciswa ngayo.",
+          "Impela! Ngizozama konke okusemandleni ami ukukusiza uqonde. Yiluphi uhlangothi ongifuna ngiluqhubeke?"
+        ]
+      },
+      'xh': {
+        "Hello, how are you doing today?": [
+          "Molo! Ndiphilile kakuhle namhlanje, enkosi ngokubuza. Kuyonwaba ukudibana nawe. Injani imini yakho?",
+          "Ewe molo! Ndiziva kakuhle kakhulu namhlanje. Wena ke, unjani?",
+          "Molo! Konke kuhamba kakuhle apha. Enkosi ngentetho enobubele. Injani imini yakho?"
+        ],
+        "Nice to meet you, I'm looking forward to our conversation.": [
+          "Luvuyo lwam! Nam ndiyonwaba ukuncokola nawe. Yintoni ongathanda ukuncokola ngayo?",
+          "Nam kwanjalo! Ndiyakuthanda ukudibana nabantu abatsha. Ndazi ukuba siyakuba nencoko emnandi.",
+          "Kuyamangalisa ukudibana nawe! Nam ndijonge phambili kwincoko yethu. Ngaba ikho into ethile ongathanda ukuthetha ngayo?"
+        ],
+        "Can you help me understand this better?": [
+          "Ewe! Ndiyavuya ukunceda ukuba uqonde ngcono. Yintoni ekhethekileyo ongafuna ndikuchazele?",
+          "Ngokuqinisekileyo! Ndilapha ukunceda. Nceda undazise ukuba yintoni ofuna ukucaciswa ngayo.",
+          "Ngokuqinisekileyo! Ndiza kuzama konke okusemandleni am ukukunceda uqonde. Leliphi icandelo ongafuna ndiqhubeke nalo?"
+        ]
+      },
+      'st': {
+        "Hello, how are you doing today?": [
+          "Dumela! Ke phela hantle kajeno, ke leboga ho botsa. Ho thabo ho kopana le wena. O phela jwang kajeno?",
+          "Ee dumela! Ke ikutlwa ke phela hantle haholo kajeno. Wena o jwang?",
+          "Dumela! Tsohle di tsamaya hantle mona. Ke leboga ho dumedisa ka thabo. O ile wa phela jwang kajeno?"
+        ],
+        "Nice to meet you, I'm looking forward to our conversation.": [
+          "Ke thabo ya ka! Le nna ke thabetse ho bua le wena. Ke eng seo o ka ratang ho bua ka sona?",
+          "Le nna hape! Ke rata ho kopana le batho ba bacha. Ke tseba hore re tla ba le puisano e monate.",
+          "Ho makatsang ho kopana le wena! Le nna ke lebelletse puisano ya rona. Na ho na le ntho e itseng eo o ka ratang ho bua ka yona?"
+        ],
+        "Can you help me understand this better?": [
+          "Ee! Ke thabela ho o thusa hore o utlwisise botjhaba. Ke eng se itseng seo o batlang ke o hlalosetseng?",
+          "Ka sebele! Ke mona ho o thusa. Ka kopo ntsebise hore na ke eng seo o batlang ho hlalosetswa ka sona.",
+          "Ka sebele! Ke tla leka sohle se ka matla a ka ho o thusa ho utlwisisa. Ke karolo efe eo o batlang ke tswele pele ka yona?"
         ]
       }
     };
