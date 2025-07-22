@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, Globe, Brain, Shield, BarChart3, Users, Zap, Heart, MessageCircle, Eye, TrendingUp, Star, Mic, HeadphonesIcon, Menu, X } from "lucide-react";
+import { CheckCircle, Globe, Brain, Shield, BarChart3, Users, Zap, Heart, MessageCircle, Eye, TrendingUp, Star, Mic, HeadphonesIcon, Menu, X, Camera, Image, FileText, Coffee, Briefcase } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 
@@ -76,7 +76,7 @@ export default function Index() {
     { code: 'ta', name: 'Tamil', flag: '🇮🇳', region: 'Asia' },
     { code: 'te', name: 'Telugu', flag: '🇮🇳', region: 'Asia' },
     { code: 'mr', name: 'Marathi', flag: '🇮🇳', region: 'Asia' },
-    { code: 'gu', name: 'Gujarati', flag: '🇮🇳', region: 'Asia' },
+    { code: 'gu', name: 'Gujarati', flag: '���🇳', region: 'Asia' },
     { code: 'kn', name: 'Kannada', flag: '🇮🇳', region: 'Asia' },
     { code: 'ml', name: 'Malayalam', flag: '🇮🇳', region: 'Asia' },
     { code: 'pa', name: 'Punjabi', flag: '🇮🇳', region: 'Asia' },
@@ -338,7 +338,7 @@ export default function Index() {
         "Hello, how are you doing today?": [
           "नमस्ते! मैं आज बहुत अच्छा हूँ, पूछने के लिए धन्यवाद। आपसे मिलकर खुशी हुई। आपका दिन कैसा रहा?",
           "हैलो! मैं आज बेहतरीन महसूस कर रहा हूँ। और आप कैसे हैं?",
-          "नमस्ते! यहाँ सब कुछ बहुत अच्छा चल रहा है। आपके मिलनसार अभिवादन के लिए धन्यवाद। आपका दिन कैसा रहा?"
+          "नमस्ते! य��ाँ सब कुछ बहुत अच्छा चल रहा है। आपके मिलनसार अभिवादन के लिए धन्यवाद। आपका दिन कैसा रहा?"
         ]
       },
       'th': {
@@ -350,7 +350,7 @@ export default function Index() {
       },
       'vi': {
         "Hello, how are you doing today?": [
-          "Xin chào! Hôm nay tôi rất khỏe, cảm ơn bạn đã hỏi. Rất vui được gặp bạn. Ngày hôm nay của bạn thế nào?",
+          "Xin chào! Hôm nay tôi rất khỏe, cảm ơn bạn đã hỏi. Rất vui được gặp bạn. Ngày hôm nay của b��n thế nào?",
           "Chào bạn! Hôm nay tôi cảm thấy tuyệt vời. Còn bạn thì sao?",
           "Xin chào! Mọi thứ ở đây đều tuyệt vời. Cảm ơn lời chào thân thiện của bạn. Ngày của bạn như thế nào?"
         ]
