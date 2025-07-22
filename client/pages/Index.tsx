@@ -294,7 +294,7 @@ export default function Index() {
       },
       'ja': {
         "Hello, how are you doing today?": [
-          "こんにちは！今日は元気です、お聞きいただきありがとうございます。お会いできて嬉しいです。今日はいか��でしたか？",
+          "こんにちは！今日は元気です、お聞きいただきありがとうございます。お会いできて嬉しいです。今日はいかがでしたか？",
           "こんにちは！今日は素晴らしい気分です。あなたはいかがですか？",
           "こんにちは！こちらはすべて順調です。親切なご挨拶をありがとうございます。今日はどうでしたか？"
         ]
@@ -336,7 +336,7 @@ export default function Index() {
       },
       'hi': {
         "Hello, how are you doing today?": [
-          "नमस्ते! मैं आज बहुत अच्छा हूँ, पू���ने के लिए धन्यवाद। आपसे मिलकर खुशी हुई। आपका दिन कैसा रहा?",
+          "नमस्ते! मैं आज बहुत अच्छा हूँ, पूछने के लिए धन्यवाद। आपसे मिलकर खुशी हुई। आपका दिन कैसा रहा?",
           "हैलो! मैं आज बेहतरीन महसूस कर रहा हूँ। और आप कैसे हैं?",
           "नमस्ते! यहाँ सब कुछ बहुत अच्छा चल रहा है। आपके मिलनसार अभिवादन के लिए धन्यवाद। आपका दिन कैसा रहा?"
         ]
@@ -345,7 +345,7 @@ export default function Index() {
         "Hello, how are you doing today?": [
           "สวัสดีครับ! วันนี้ผมสบายดีมากครับ ขอบคุณที่ถาม ยินดีที่ได้รู้จักครับ วันนี้เป็นอย่างไรบ้างครับ?",
           "สวัสดี! วันนี้รู้สึกดีมากเลยครับ แล้วคุณล่ะครับ เป็นอย่างไรบ้าง?",
-          "สวัสดีครับ! ที่นี่ทุกอย่างเป็นไปด้วยดีมากครับ ขอบคุณสำหรับคำทัก���ายที่น่ารักครับ วันนี้เป็นอย่างไรบ้างครับ?"
+          "สวัสดีครับ! ที่นี่ทุกอย่างเป็นไปด้วยดีมากครับ ขอบคุณสำหรับคำทักทายที่น่ารักครับ วันนี้เป็นอย่างไรบ้างครับ?"
         ]
       },
       'vi': {
@@ -818,15 +818,19 @@ export default function Index() {
                   New Feature
                 </Badge>
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                  Record & Translate <span className="gradient-text">Any Conversation</span>
+                  Record, Photo & Translate <span className="gradient-text">Everything</span>
                 </h2>
                 <p className="text-xl text-muted-foreground mb-8">
-                  Record your conversations and get instant AI translation in any language you choose. Perfect for business meetings, phone calls, and face-to-face chats.
+                  Your complete AI translation companion for voice conversations, written text, and visual content. Perfect for business meetings, café visits, travel, and daily interactions.
                 </p>
                 <div className="space-y-4 mb-8">
                   <div className="flex items-center space-x-3">
                     <Mic className="w-5 h-5 text-primary" />
-                    <span>One-tap recording for any conversation</span>
+                    <span>One-tap voice recording and translation</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Camera className="w-5 h-5 text-primary" />
+                    <span>Photo translation for menus, signs, documents</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Globe className="w-5 h-5 text-primary" />
@@ -835,6 +839,10 @@ export default function Index() {
                   <div className="flex items-center space-x-3">
                     <HeadphonesIcon className="w-5 h-5 text-primary" />
                     <span>Natural voice playback in target language</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Coffee className="w-5 h-5 text-primary" />
+                    <span>Casual café conversations & business meetings</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <BarChart3 className="w-5 h-5 text-primary" />
