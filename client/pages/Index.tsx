@@ -20,7 +20,15 @@ export default function Index() {
   const [showAllLanguages, setShowAllLanguages] = useState(false);
   const [languageSearch, setLanguageSearch] = useState('');
   const [selectedRegion, setSelectedRegion] = useState('all');
+  const [photoMode, setPhotoMode] = useState(false);
+  const [capturedImage, setCapturedImage] = useState<string | null>(null);
+  const [extractedText, setExtractedText] = useState('');
+  const [translatedPhoto, setTranslatedPhoto] = useState('');
+  const [isProcessingPhoto, setIsProcessingPhoto] = useState(false);
+  const [conversationMode, setConversationMode] = useState<'casual' | 'business' | null>(null);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   // Supported languages for translation (100+ languages)
   const supportedLanguages = [
@@ -344,7 +352,7 @@ export default function Index() {
         "Hello, how are you doing today?": [
           "Xin chào! Hôm nay tôi rất khỏe, cảm ơn bạn đã hỏi. Rất vui được gặp bạn. Ngày hôm nay của bạn thế nào?",
           "Chào bạn! Hôm nay tôi cảm thấy tuyệt vời. Còn bạn thì sao?",
-          "Xin chào! Mọi thứ ở đây đều tuyệt vời. Cảm ơn lời chào thân thiện của bạn. Ngày của bạn như th��� nào?"
+          "Xin chào! Mọi thứ ở đây đều tuyệt vời. Cảm ơn lời chào thân thiện của bạn. Ngày của bạn như thế nào?"
         ]
       }
     };
