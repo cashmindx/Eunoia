@@ -27,7 +27,7 @@ export default function Index() {
     // Major European Languages
     { code: 'es', name: 'Spanish', flag: '🇪🇸', region: 'Europe' },
     { code: 'fr', name: 'French', flag: '🇫🇷', region: 'Europe' },
-    { code: 'de', name: 'German', flag: '🇩��', region: 'Europe' },
+    { code: 'de', name: 'German', flag: '🇩🇪', region: 'Europe' },
     { code: 'it', name: 'Italian', flag: '🇮🇹', region: 'Europe' },
     { code: 'pt', name: 'Portuguese', flag: '🇵🇹', region: 'Europe' },
     { code: 'ru', name: 'Russian', flag: '🇷🇺', region: 'Europe' },
@@ -307,18 +307,37 @@ export default function Index() {
 
       // Set language for natural pronunciation
       const languageMap: Record<string, string> = {
-        'es': 'es-ES',
-        'fr': 'fr-FR',
-        'de': 'de-DE',
-        'it': 'it-IT',
-        'pt': 'pt-PT',
-        'ru': 'ru-RU',
-        'ja': 'ja-JP',
-        'ko': 'ko-KR',
-        'zh': 'zh-CN',
-        'ar': 'ar-SA',
-        'hi': 'hi-IN',
-        'nl': 'nl-NL'
+        // European Languages
+        'es': 'es-ES', 'fr': 'fr-FR', 'de': 'de-DE', 'it': 'it-IT', 'pt': 'pt-PT',
+        'ru': 'ru-RU', 'nl': 'nl-NL', 'pl': 'pl-PL', 'uk': 'uk-UA', 'cs': 'cs-CZ',
+        'sk': 'sk-SK', 'hu': 'hu-HU', 'ro': 'ro-RO', 'bg': 'bg-BG', 'hr': 'hr-HR',
+        'sr': 'sr-RS', 'sl': 'sl-SI', 'lt': 'lt-LT', 'lv': 'lv-LV', 'et': 'et-EE',
+        'fi': 'fi-FI', 'sv': 'sv-SE', 'no': 'no-NO', 'da': 'da-DK', 'is': 'is-IS',
+        'ga': 'ga-IE', 'cy': 'cy-GB', 'mt': 'mt-MT', 'sq': 'sq-AL', 'mk': 'mk-MK',
+        'bs': 'bs-BA',
+
+        // Asian Languages
+        'zh': 'zh-CN', 'zh-tw': 'zh-TW', 'ja': 'ja-JP', 'ko': 'ko-KR', 'hi': 'hi-IN',
+        'bn': 'bn-BD', 'ur': 'ur-PK', 'ta': 'ta-IN', 'te': 'te-IN', 'mr': 'mr-IN',
+        'gu': 'gu-IN', 'kn': 'kn-IN', 'ml': 'ml-IN', 'pa': 'pa-IN', 'ne': 'ne-NP',
+        'si': 'si-LK', 'my': 'my-MM', 'th': 'th-TH', 'vi': 'vi-VN', 'lo': 'lo-LA',
+        'km': 'km-KH', 'ms': 'ms-MY', 'id': 'id-ID', 'tl': 'tl-PH', 'mn': 'mn-MN',
+        'ka': 'ka-GE', 'hy': 'hy-AM', 'az': 'az-AZ', 'kk': 'kk-KZ', 'ky': 'ky-KG',
+        'uz': 'uz-UZ', 'tk': 'tk-TM', 'tg': 'tg-TJ',
+
+        // Middle Eastern Languages
+        'ar': 'ar-SA', 'fa': 'fa-IR', 'tr': 'tr-TR', 'he': 'he-IL', 'ku': 'ku-TR',
+
+        // African Languages
+        'sw': 'sw-KE', 'am': 'am-ET', 'ha': 'ha-NG', 'yo': 'yo-NG', 'ig': 'ig-NG',
+        'zu': 'zu-ZA', 'xh': 'xh-ZA', 'af': 'af-ZA', 'mg': 'mg-MG', 'rw': 'rw-RW',
+        'so': 'so-SO',
+
+        // Americas Languages
+        'en': 'en-US', 'pt-br': 'pt-BR', 'qu': 'qu-PE', 'gn': 'gn-PY',
+
+        // Pacific Languages
+        'haw': 'haw-US', 'mi': 'mi-NZ', 'fj': 'fj-FJ', 'to': 'to-TO', 'sm': 'sm-WS'
       };
 
       utterance.lang = languageMap[language] || 'en-US';
