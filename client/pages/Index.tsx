@@ -63,7 +63,7 @@ export default function Index() {
     { code: 'mt', name: 'Maltese', flag: '🇲🇹', region: 'Europe' },
     { code: 'sq', name: 'Albanian', flag: '🇦🇱', region: 'Europe' },
     { code: 'mk', name: 'Macedonian', flag: '🇲🇰', region: 'Europe' },
-    { code: 'bs', name: 'Bosnian', flag: '����🇦', region: 'Europe' },
+    { code: 'bs', name: 'Bosnian', flag: '🇧🇦', region: 'Europe' },
 
     // Asian Languages
     { code: 'zh', name: 'Chinese (Mandarin)', flag: '🇨🇳', region: 'Asia' },
@@ -311,7 +311,7 @@ export default function Index() {
         "Hello, how are you doing today?": [
           "Bonjour ! Je vais très bien, merci de demander. C'est un plaisir de vous rencontrer. Comment s'est passée votre journée ?",
           "Salut ! Je me sens excellent aujourd'hui. Et vous, comment allez-vous ?",
-          "Bonjour ! Tout va à merveille ici. Merci pour votre aimable salutation. Comment va votre journée ?"
+          "Bonjour ! Tout va �� merveille ici. Merci pour votre aimable salutation. Comment va votre journée ?"
         ]
       },
       'de': {
@@ -323,7 +323,7 @@ export default function Index() {
       },
       'zh': {
         "Hello, how are you doing today?": [
-          "你好！我今天很好，谢���你的问候。很高兴认识你。你今天过得怎么样？",
+          "你好！我今天很好，谢谢你的问候。很高兴认识你。你今天过得怎么样？",
           "你好！我感觉很棒。你呢，你好吗？",
           "你好！我这里一切都很好。谢谢你友好的问候。你今天怎么样？"
         ]
@@ -344,7 +344,7 @@ export default function Index() {
       },
       'ko': {
         "Hello, how are you doing today?": [
-          "안녕하��요! 오늘 정말 좋아요, 물어봐 주셔서 감사합니다. 만나서 반가워요. 오늘 어떠셨어요?",
+          "안녕하세요! 오늘 정말 좋아요, 물어봐 주셔서 감사합니다. 만나서 반가워요. 오늘 어떠셨어요?",
           "안녕하세요! 오늘 기분이 아주 좋아요. 당신은 어떠세요?",
           "안녕하세요! 여기 모든 것이 훌륭해요. 친절한 인사 감사해요. 오늘 어땠어요?"
         ]
@@ -636,7 +636,7 @@ export default function Index() {
 
       const simulatedOCRTexts = {
         'casual': [
-          "Welcome to Café Luna\nToday's Special: Cappuccino €3.50\nEspresso €2.00\nCroissant €2.50\nOpen 7AM - 9PM",
+          "Welcome to Café Luna\nToday's Special: Cappuccino ��3.50\nEspresso €2.00\nCroissant €2.50\nOpen 7AM - 9PM",
           "Menu\nPasta Carbonara €12\nMargherita Pizza €10\nCaesar Salad €8\nTiramisu €5",
           "Bus Schedule\nNext bus: 15 minutes\nDestination: City Center\nPlatform 3"
         ],
@@ -1630,6 +1630,75 @@ export default function Index() {
                 <h4 className="text-xl font-semibold mb-2">Voice Output</h4>
                 <p className="text-muted-foreground">Google Text-to-Speech for natural-sounding translations</p>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PayPal Integration Guide */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
+              💳 PayPal Payment Integration
+            </h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="glass-effect p-6 rounded-lg border border-border/50">
+                <h3 className="text-xl font-semibold mb-4 flex items-center">
+                  <Briefcase className="w-5 h-5 mr-2" />
+                  Setup Instructions
+                </h3>
+                <ol className="space-y-3 text-sm">
+                  <li className="flex items-start space-x-2">
+                    <span className="bg-primary rounded-full w-6 h-6 flex items-center justify-center text-xs text-white font-bold">1</span>
+                    <span>Create PayPal Developer account at <code className="bg-muted px-1 rounded">developer.paypal.com</code></span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <span className="bg-primary rounded-full w-6 h-6 flex items-center justify-center text-xs text-white font-bold">2</span>
+                    <span>Create a new app and get your Client ID & Secret</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <span className="bg-primary rounded-full w-6 h-6 flex items-center justify-center text-xs text-white font-bold">3</span>
+                    <span>Install PayPal SDK: <code className="bg-muted px-1 rounded">npm install @paypal/react-paypal-js</code></span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <span className="bg-primary rounded-full w-6 h-6 flex items-center justify-center text-xs text-white font-bold">4</span>
+                    <span>Configure environment variables with your PayPal credentials</span>
+                  </li>
+                </ol>
+              </div>
+
+              <div className="glass-effect p-6 rounded-lg border border-border/50">
+                <h3 className="text-xl font-semibold mb-4 flex items-center">
+                  <FileText className="w-5 h-5 mr-2" />
+                  Integration Code
+                </h3>
+                <div className="bg-muted/50 rounded p-3 text-xs font-mono">
+                  <div className="text-green-600 mb-2">// PayPal Wrapper Component</div>
+                  <div>{`<PayPalScriptProvider options={{`}</div>
+                  <div className="ml-2">{`"client-id": "YOUR_CLIENT_ID",`}</div>
+                  <div className="ml-2">{`currency: "USD"`}</div>
+                  <div>{`}}>`}</div>
+                  <div className="mt-2">{`<PayPalButtons`}</div>
+                  <div className="ml-2">{`createOrder={(data, actions) => {`}</div>
+                  <div className="ml-4">{`return actions.order.create({`}</div>
+                  <div className="ml-6">{`purchase_units: [{`}</div>
+                  <div className="ml-8">{`amount: { value: "19.99" }`}</div>
+                  <div className="ml-6">{`}]`}</div>
+                  <div className="ml-4">{`});`}</div>
+                  <div className="ml-2">{`}}`}</div>
+                  <div className="ml-2">{`onApprove={handlePayment}`}</div>
+                  <div>{`/>`}</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8 p-6 bg-blue-500/10 rounded-lg border border-blue-500/20">
+              <h4 className="font-semibold text-blue-600 mb-2">🚀 Quick Setup for Testing:</h4>
+              <p className="text-sm text-muted-foreground">
+                Use PayPal Sandbox for testing payments. All current pricing buttons will show PayPal integration instructions when clicked.
+                Connect Plan: $19.99/month • Synergy Plan: $49.99/month • Enterprise: Custom pricing via sales team.
+              </p>
             </div>
           </div>
         </div>
