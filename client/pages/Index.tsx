@@ -27,7 +27,7 @@ export default function Index() {
     // Major European Languages
     { code: 'es', name: 'Spanish', flag: '🇪🇸', region: 'Europe' },
     { code: 'fr', name: 'French', flag: '🇫🇷', region: 'Europe' },
-    { code: 'de', name: 'German', flag: '🇩🇪', region: 'Europe' },
+    { code: 'de', name: 'German', flag: '🇩��', region: 'Europe' },
     { code: 'it', name: 'Italian', flag: '🇮🇹', region: 'Europe' },
     { code: 'pt', name: 'Portuguese', flag: '🇵🇹', region: 'Europe' },
     { code: 'ru', name: 'Russian', flag: '🇷🇺', region: 'Europe' },
@@ -651,21 +651,124 @@ export default function Index() {
                 {/* Language Selector */}
                 <div className="mb-6">
                   <label className="block text-sm font-medium mb-3">🌐 Select Response Language:</label>
-                  <div className="grid grid-cols-3 gap-2">
-                    {supportedLanguages.slice(0, 6).map((lang) => (
-                      <button
-                        key={lang.code}
-                        onClick={() => setSelectedLanguage(lang.code)}
-                        className={`p-2 rounded-lg border text-sm transition-all ${
-                          selectedLanguage === lang.code
-                            ? 'border-primary bg-primary/10 text-primary'
-                            : 'border-border hover:border-primary/50'
-                        }`}
-                      >
-                        <span className="text-lg">{lang.flag}</span>
-                        <div className="text-xs">{lang.name}</div>
-                      </button>
-                    ))}
+
+                  {/* Popular Languages (Quick Select) */}
+                  <div className="mb-4">
+                    <div className="text-xs text-muted-foreground mb-2">Popular Languages:</div>
+                    <div className="grid grid-cols-3 gap-2">
+                      {supportedLanguages.filter(lang =>
+                        ['es', 'fr', 'de', 'zh', 'ja', 'ar'].includes(lang.code)
+                      ).map((lang) => (
+                        <button
+                          key={lang.code}
+                          onClick={() => setSelectedLanguage(lang.code)}
+                          className={`p-2 rounded-lg border text-sm transition-all ${
+                            selectedLanguage === lang.code
+                              ? 'border-primary bg-primary/10 text-primary'
+                              : 'border-border hover:border-primary/50'
+                          }`}
+                        >
+                          <span className="text-lg">{lang.flag}</span>
+                          <div className="text-xs">{lang.name}</div>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* More Languages Button */}
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => setShowAllLanguages(!showAllLanguages)}
+                    className="w-full mb-4"
+                  >
+                    <Globe className="w-4 h-4 mr-2" />
+                    {showAllLanguages ? 'Hide' : 'Show All'} Languages ({supportedLanguages.length}+)
+                  </Button>
+
+                  {/* All Languages Selector */}
+                  {showAllLanguages && (
+                    <div className="border rounded-lg p-4 bg-muted/20 max-h-80 overflow-y-auto">
+                      {/* Search and Filter */}
+                      <div className="mb-4 space-y-3">
+                        <input
+                          type="text"
+                          placeholder="Search languages..."
+                          value={languageSearch}
+                          onChange={(e) => setLanguageSearch(e.target.value)}
+                          className="w-full px-3 py-2 text-sm border rounded-lg bg-background"
+                        />
+
+                        <div className="flex flex-wrap gap-2">
+                          {['all', 'Europe', 'Asia', 'Middle East', 'Africa', 'Americas', 'Pacific'].map((region) => (
+                            <button
+                              key={region}
+                              onClick={() => setSelectedRegion(region)}
+                              className={`px-3 py-1 text-xs rounded-full transition-all ${
+                                selectedRegion === region
+                                  ? 'bg-primary text-primary-foreground'
+                                  : 'bg-muted hover:bg-muted/80'
+                              }`}
+                            >
+                              {region === 'all' ? 'All Regions' : region}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Filtered Languages Grid */}
+                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                        {supportedLanguages
+                          .filter(lang => {
+                            const matchesSearch = lang.name.toLowerCase().includes(languageSearch.toLowerCase());
+                            const matchesRegion = selectedRegion === 'all' || lang.region === selectedRegion;
+                            return matchesSearch && matchesRegion;
+                          })
+                          .map((lang) => (
+                            <button
+                              key={lang.code}
+                              onClick={() => {
+                                setSelectedLanguage(lang.code);
+                                setShowAllLanguages(false);
+                              }}
+                              className={`p-3 rounded-lg border text-sm transition-all text-left ${
+                                selectedLanguage === lang.code
+                                  ? 'border-primary bg-primary/10 text-primary'
+                                  : 'border-border hover:border-primary/50 hover:bg-muted/50'
+                              }`}
+                            >
+                              <div className="flex items-center space-x-2">
+                                <span className="text-lg">{lang.flag}</span>
+                                <div>
+                                  <div className="text-xs font-medium">{lang.name}</div>
+                                  <div className="text-xs text-muted-foreground">{lang.region}</div>
+                                </div>
+                              </div>
+                            </button>
+                          ))}
+                      </div>
+
+                      {supportedLanguages.filter(lang => {
+                        const matchesSearch = lang.name.toLowerCase().includes(languageSearch.toLowerCase());
+                        const matchesRegion = selectedRegion === 'all' || lang.region === selectedRegion;
+                        return matchesSearch && matchesRegion;
+                      }).length === 0 && (
+                        <div className="text-center py-8 text-muted-foreground">
+                          No languages found matching your criteria.
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  {/* Selected Language Display */}
+                  <div className="mt-3 p-3 bg-primary/5 rounded-lg border border-primary/20">
+                    <div className="flex items-center space-x-3">
+                      <span className="text-2xl">{supportedLanguages.find(l => l.code === selectedLanguage)?.flag}</span>
+                      <div>
+                        <div className="text-sm font-medium">Selected: {supportedLanguages.find(l => l.code === selectedLanguage)?.name}</div>
+                        <div className="text-xs text-muted-foreground">AI will respond in this language</div>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
