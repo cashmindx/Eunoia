@@ -1,60 +1,60 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, Globe, Brain, Shield, BarChart3, Users, Zap, Heart, MessageCircle, Eye, TrendingUp, Star } from "lucide-react";
+import { CheckCircle, Globe, Brain, Shield, BarChart3, Users, Zap, Heart, MessageCircle, Eye, TrendingUp, Star, Mic, HeadphonesIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function Index() {
   const features = [
     {
+      icon: <Mic className="w-6 h-6" />,
+      title: "Record & Translate Conversations",
+      description: "Record your conversations and get instant AI translation in any language you choose. Perfect for meetings, calls, and face-to-face chats."
+    },
+    {
       icon: <Brain className="w-6 h-6" />,
-      title: "Cognitive Mirroring",
-      description: "Adapts your communication style to resonate with the other person's thought patterns (direct vs. indirect, big picture vs. detail-oriented)."
+      title: "Communication Style Matching",
+      description: "Adjusts how you speak based on how others think and talk (like direct vs. indirect, or detail vs. big picture)."
     },
     {
       icon: <Heart className="w-6 h-6" />,
-      title: "Emotional Resonance Check",
-      description: "Gauges emotional tone and advises on delivery adjustments for maximum impact."
+      title: "Emotion Check",
+      description: "Detects the emotional tone and suggests ways to respond better."
     },
     {
       icon: <Shield className="w-6 h-6" />,
-      title: "Trust Indicator & Mitigation",
-      description: "Monitors subtle trust cues and suggests real-time mitigation actions to build rapport."
-    },
-    {
-      icon: <Globe className="w-6 h-6" />,
-      title: "Digital Diplomat Sandbox",
-      description: "Simulate interactions with AI avatars and receive cultural feedback before real conversations."
+      title: "Trust Monitor",
+      description: "Spots moments where trust might drop and gives tips to build it back up."
     },
     {
       icon: <Users className="w-6 h-6" />,
-      title: "Contextual Persona Adaptation",
-      description: "Tailors your communication persona for specific cultural contexts and social situations."
+      title: "Conversation Simulator",
+      description: "Practice important chats with AI characters and get cultural feedback."
     },
     {
       icon: <BarChart3 className="w-6 h-6" />,
-      title: "Hierarchical Compass",
-      description: "Identifies unspoken power structures and advises on appropriate address forms and conversation flow."
+      title: "Hierarchy Detector",
+      description: "Understands who holds power in a group and how you should speak to them."
     },
     {
       icon: <Eye className="w-6 h-6" />,
-      title: "Bias Blocker",
-      description: "Detects and rephrases potentially biased or insensitive language in real-time."
+      title: "Bias Filter",
+      description: "Warns you if your words might sound biased or offensive."
     },
     {
       icon: <MessageCircle className="w-6 h-6" />,
-      title: "Communication Debrief",
-      description: "Summarizes communication dynamics and offers improvement insights after each interaction."
+      title: "Conversation Summary",
+      description: "Gives you a report on how the talk went and how to improve."
     }
   ];
 
   const benefits = [
-    "Eliminate Communication Blind Spots",
-    "Forge Deeper Connections & Trust",
-    "Achieve Strategic Communication Mastery",
-    "Boost Confidence & Reduce Anxiety",
-    "Experience Personalized Growth",
-    "Enjoy Unparalleled Convenience"
+    "Spot Hidden Messages",
+    "Build Real Trust",
+    "Communicate Smarter",
+    "Feel Confident",
+    "Grow With Feedback",
+    "Use It Anywhere"
   ];
 
   const pricingPlans = [
@@ -62,12 +62,12 @@ export default function Index() {
       name: "Basic",
       price: "Free",
       period: "",
-      description: "Perfect for travelers and learners",
+      description: "Travelers and learners",
       features: [
-        "Core STT/TTS",
+        "Voice Translation",
         "Phrasebook",
-        "5min/day calls, 20 msgs/day",
-        "Ad-supported"
+        "5 min/day calls, 20 messages/day",
+        "Ads"
       ],
       cta: "Get Started",
       popular: false
@@ -76,12 +76,13 @@ export default function Index() {
       name: "Connect",
       price: "$19.99",
       period: "/month",
-      description: "Ideal for freelancers and SMBs",
+      description: "Freelancers and small teams",
       features: [
-        "Unlimited Contextual Feedback",
-        "Idiom Localizer",
-        "Priority Support",
-        "Ad-Free Experience"
+        "Everything in Basic",
+        "Unlimited insights",
+        "Idiom translations",
+        "No ads",
+        "Priority support"
       ],
       cta: "Start Free Trial",
       popular: true
@@ -90,15 +91,13 @@ export default function Index() {
       name: "Synergy",
       price: "$49.99",
       period: "/month",
-      description: "For international sales, HR, consultants",
+      description: "HR, consultants, travelers",
       features: [
-        "All Connect Features",
-        "Digital Sandbox",
-        "Persona Adaptation",
-        "Hierarchical Compass",
-        "Bias & Consent Tools",
-        "2 Debriefs/month",
-        "Account Manager"
+        "Everything in Connect",
+        "Unlimited simulations",
+        "Persona tools",
+        "Power structure helper",
+        "2 debriefs/month"
       ],
       cta: "Start Free Trial",
       popular: false
@@ -107,15 +106,13 @@ export default function Index() {
       name: "Enterprise",
       price: "Custom",
       period: "",
-      description: "For corporates and diplomacy",
+      description: "Large companies and diplomacy",
       features: [
-        "All Synergy Features",
-        "Unlimited Debriefs",
-        "API Integration",
-        "Team Dashboard",
-        "SSO & Tech Support",
-        "Custom Modules",
-        "Compliance Audits"
+        "Everything in Synergy",
+        "Full analytics & integrations",
+        "Unlimited debriefs",
+        "Team tools",
+        "Custom modules"
       ],
       cta: "Contact Sales",
       popular: false
@@ -156,12 +153,12 @@ export default function Index() {
               The Global Empathy Nexus AI
             </Badge>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              Connect Beyond Words.<br />
-              <span className="gradient-text">Understand Every Culture.</span><br />
-              Master Every Conversation.
+              Speak Clearly.<br />
+              <span className="gradient-text">Connect Deeply.</span><br />
+              Understand Across Cultures.
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-              Eunoia is a revolutionary AI companion that transforms cross-cultural communication from transactional exchanges into deeply empathetic and strategically effective interactions.
+              Eunoia is a powerful AI partner that helps you communicate across different cultures with empathy and precision. It goes far beyond translation to help you connect with people in a real, meaningful way.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button size="lg" className="gradient-primary hover:opacity-90 transition-opacity px-8 py-3 text-lg">
@@ -181,10 +178,10 @@ export default function Index() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Real-time Implicit Contextual Intelligence
+              What Eunoia Can Do
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Eunoia isn't just about what's spoken; it's about what's truly understood. Our AI goes beyond translation to decode the implicit layers of human connection.
+              Eunoia helps you go beyond words to truly understand people. Record conversations, get instant translations, and learn how to communicate better across cultures.
             </p>
           </div>
           
@@ -214,10 +211,10 @@ export default function Index() {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Benefits for <span className="gradient-text">You</span>
+                Why Use <span className="gradient-text">Eunoia</span>
               </h2>
               <p className="text-xl text-muted-foreground">
-                With Eunoia, you will transform how you connect, communicate, and succeed globally.
+                Transform how you connect, communicate, and succeed with people from different cultures.
               </p>
             </div>
             
@@ -238,10 +235,10 @@ export default function Index() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Choose Your Path to <span className="gradient-text">Global Fluency</span>
+              <span className="gradient-text">Pricing Plans</span>
             </h2>
             <p className="text-xl text-muted-foreground">
-              Select the plan that fits your communication needs and budget.
+              Choose the plan that works best for you.
             </p>
           </div>
           
@@ -289,23 +286,23 @@ export default function Index() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-8">
-              Powered by <span className="gradient-text">Cutting-Edge AI</span>
+              How <span className="gradient-text">Eunoia Works</span>
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="p-6 rounded-lg bg-muted/20 border border-border/50">
                 <Brain className="w-12 h-12 text-primary mx-auto mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Google Gemini AI</h3>
-                <p className="text-muted-foreground">Advanced language understanding and cultural intelligence</p>
+                <p className="text-muted-foreground">Smart language understanding and cultural knowledge</p>
               </div>
               <div className="p-6 rounded-lg bg-muted/20 border border-border/50">
                 <MessageCircle className="w-12 h-12 text-primary mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-2">Real-time Processing</h3>
-                <p className="text-muted-foreground">Instant speech-to-text and text-to-speech capabilities</p>
+                <h3 className="text-xl font-semibold mb-2">Voice Recognition</h3>
+                <p className="text-muted-foreground">Google Speech-to-Text for clear voice recording and translation</p>
               </div>
               <div className="p-6 rounded-lg bg-muted/20 border border-border/50">
                 <Shield className="w-12 h-12 text-primary mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-2">Privacy First</h3>
-                <p className="text-muted-foreground">Enterprise-grade security and compliance</p>
+                <h3 className="text-xl font-semibold mb-2">Voice Output</h3>
+                <p className="text-muted-foreground">Google Text-to-Speech for natural-sounding translations</p>
               </div>
             </div>
           </div>
@@ -316,10 +313,10 @@ export default function Index() {
       <section className="py-20 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to Transform Your Global Communications?
+            Ready to Connect Across Cultures?
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Join thousands of professionals who trust Eunoia to navigate cross-cultural conversations with confidence and empathy.
+            Join people who use Eunoia to have better conversations and build stronger relationships across cultures.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button size="lg" className="gradient-primary hover:opacity-90 transition-opacity px-8 py-3 text-lg">
@@ -344,7 +341,7 @@ export default function Index() {
                 <span className="text-2xl font-bold gradient-text">Eunoia</span>
               </div>
               <p className="text-muted-foreground mb-4 max-w-md">
-                The Global Empathy Nexus AI - Transforming cross-cultural communication through advanced AI and deep cultural understanding.
+                The Global Empathy Nexus AI - Helping you communicate better across cultures with smart AI translation and cultural guidance.
               </p>
               <div className="space-y-2">
                 <p className="text-sm">
