@@ -46,7 +46,7 @@ export default function Index() {
     { code: 'sk', name: 'Slovak', flag: '🇸🇰', region: 'Europe' },
     { code: 'hu', name: 'Hungarian', flag: '🇭🇺', region: 'Europe' },
     { code: 'ro', name: 'Romanian', flag: '🇷🇴', region: 'Europe' },
-    { code: 'bg', name: 'Bulgarian', flag: '🇧���', region: 'Europe' },
+    { code: 'bg', name: 'Bulgarian', flag: '🇧🇬', region: 'Europe' },
     { code: 'hr', name: 'Croatian', flag: '🇭🇷', region: 'Europe' },
     { code: 'sr', name: 'Serbian', flag: '🇷🇸', region: 'Europe' },
     { code: 'sl', name: 'Slovenian', flag: '🇸🇮', region: 'Europe' },
@@ -282,7 +282,7 @@ export default function Index() {
         "Hello, how are you doing today?": [
           "¡Hola! Estoy muy bien, gracias por preguntar. Es un placer conocerte. ¿Cómo ha sido tu día?",
           "¡Qué gusto saludarte! Me siento excelente hoy. ¿Y tú, cómo te encuentras?",
-          "¡Hola! Todo va de maravilla por aquí. Gracias por tu amable saludo. ��Qué tal tu día?"
+          "¡Hola! Todo va de maravilla por aquí. Gracias por tu amable saludo. ¿Qué tal tu día?"
         ]
       },
       'fr': {
@@ -308,7 +308,7 @@ export default function Index() {
       },
       'ja': {
         "Hello, how are you doing today?": [
-          "こんにちは！今日は���気です、お聞きいただきありがとうございます。お会いできて嬉しいです。今日はいかがでしたか？",
+          "こんにちは！今日は元気です、お聞きいただきありがとうございます。お会いできて嬉しいです。今日はいかがでしたか？",
           "こんにちは！今日は素晴らしい気分です。あなたはいかがですか？",
           "こんにちは！こちらはすべて順調です。親切なご挨拶をありがとうございます。今日はどうでしたか？"
         ]
@@ -352,14 +352,14 @@ export default function Index() {
         "Hello, how are you doing today?": [
           "नमस्ते! मैं आज बहुत अच्छा हूँ, पूछने के लिए धन्यवाद। आपसे मिलकर खुशी हुई। आपका दिन कैसा रहा?",
           "हैलो! मैं आज बेहतरीन महसूस कर रहा हूँ। और आप कैसे हैं?",
-          "नमस्ते! यहाँ सब कुछ बहुत अच्छा चल रहा है। आपके मिलनसार अभिवादन के लिए धन्यवाद। आपका दिन कैसा रहा?"
+          "नमस्ते! यहाँ सब कुछ बहुत अच्छा चल रहा ���ै। आपके मिलनसार अभिवादन के लिए धन्यवाद। आपका दिन कैसा रहा?"
         ]
       },
       'th': {
         "Hello, how are you doing today?": [
           "สวัสดีครับ! วันนี้ผมสบายดีมากครับ ขอบคุณที่ถาม ยินดีที่ได้รู้จักครับ วันนี้เป็นอย่างไรบ้างครับ?",
           "สวัสดี! วันนี้รู้สึกดีมากเลยครับ แล้วคุณล่ะครับ เป็นอย่างไรบ้าง?",
-          "สวัสดีครับ! ที่นี่ทุกอ���่างเป็นไปด้วยดีมากครับ ขอบคุณสำหรับคำทักทายที่น่ารักครับ วันนี้เป็นอย่างไรบ้างครับ?"
+          "สวัสดีครับ! ที่นี่ทุกอย่างเป็นไปด้วยดีมากครับ ขอบคุณสำหรับคำทักทายที่น่ารักครับ วันนี้เป็นอย่างไรบ้างครับ?"
         ]
       },
       'vi': {
@@ -394,7 +394,7 @@ export default function Index() {
         ],
         "Nice to meet you, I'm looking forward to our conversation.": [
           "Dis my plesier! Ek is ook opgewonde om hierdie gesprek met jou te hê. Waaroor wil jy gesels?",
-          "Insgelyks! Ek hou daarvan om nuwe mense te ontmoet. Ek weet ons gaan 'n baie interessante gesprek h��.",
+          "Insgelyks! Ek hou daarvan om nuwe mense te ontmoet. Ek weet ons gaan 'n baie interessante gesprek hê.",
           "Hoe wonderlik om jou te ontmoet! Ek sien ook uit na ons geselsie. Is daar iets spesifieks waaroor jy wil praat?"
         ],
         "Can you help me understand this better?": [
@@ -907,7 +907,7 @@ export default function Index() {
                     <div className="text-xs text-muted-foreground mb-2">Popular Languages:</div>
                     <div className="grid grid-cols-4 gap-2">
                       {supportedLanguages.filter(lang =>
-                        ['en', 'es', 'fr', 'de', 'zh', 'ja', 'ar', 'af'].includes(lang.code)
+                        ['en', 'es', 'fr', 'de', 'zh', 'ja', 'ar', 'af', 'zu', 'xh', 'st'].includes(lang.code)
                       ).map((lang) => (
                         <button
                           key={lang.code}
