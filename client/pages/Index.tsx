@@ -338,7 +338,7 @@ export default function Index() {
       'ar': {
         "Hello, how are you doing today?": [
           "مرحبا! أنا بخير جداً، شكراً لسؤالك. من دواعي سروري أن ألتقي بك. كيف كان يومك؟",
-          "أهلا! أشعر بحالة ممتازة اليوم. وأنت، كيف حالك؟",
+          "أهلا! أشعر بحالة ممتازة اليوم. وأنت، كي�� حالك؟",
           "مرحبا! كل شيء يسير بشكل رائع هنا. شكراً لتحيتك اللطيفة. كيف كان يومك؟"
         ]
       },
@@ -904,26 +904,56 @@ export default function Index() {
       <section className="relative overflow-hidden py-20 lg:py-32">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-accent/20"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="text-center max-w-4xl mx-auto">
-            <Badge className="mb-6 px-4 py-2 bg-primary/10 text-primary border-primary/20">
-              The Global Empathy Nexus AI
-            </Badge>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              Speak Clearly.<br />
-              <span className="gradient-text">Connect Deeply.</span><br />
-              Understand Across Cultures.
-            </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-              Eunoia is a powerful AI partner that helps you communicate across different cultures with empathy and precision. It goes far beyond translation to help you connect with people in a real, meaningful way.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button size="lg" className="gradient-primary hover:opacity-90 transition-opacity px-8 py-3 text-lg" onClick={() => window.scrollTo({ top: document.getElementById('pricing')?.offsetTop || 0, behavior: 'smooth' })}>
-                <Zap className="w-5 h-5 mr-2" />
-                Start Your Free Trial
-              </Button>
-              <Button size="lg" variant="outline" className="px-8 py-3 text-lg" onClick={() => alert('Demo video coming soon! For now, scroll down to see all features.')}>
-                Watch Demo
-              </Button>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div className="text-center lg:text-left">
+              <Badge className="mb-6 px-4 py-2 bg-primary/10 text-primary border-primary/20">
+                The Global Empathy Nexus AI
+              </Badge>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                Speak Clearly.<br />
+                <span className="gradient-text">Connect Deeply.</span><br />
+                Understand Across Cultures.
+              </h1>
+              <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
+                Eunoia is a powerful AI partner that helps you communicate across different cultures with empathy and precision. It goes far beyond translation to help you connect with people in a real, meaningful way.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
+                <Button size="lg" className="gradient-primary hover:opacity-90 transition-opacity px-8 py-3 text-lg" onClick={() => window.scrollTo({ top: document.getElementById('pricing')?.offsetTop || 0, behavior: 'smooth' })}>
+                  <Zap className="w-5 h-5 mr-2" />
+                  Start Your Free Trial
+                </Button>
+                <Button size="lg" variant="outline" className="px-8 py-3 text-lg" onClick={() => alert('Demo video coming soon! For now, scroll down to see all features.')}>
+                  Watch Demo
+                </Button>
+              </div>
+            </div>
+
+            {/* Right Image */}
+            <div className="relative">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets%2F1a417d5c5eed4762904e3cc9f8fc6248%2Fb2d66fc782ca4f8fba1f35e5a632a2cf?format=webp&width=800"
+                  alt="Business professionals having a cross-cultural conversation"
+                  className="w-full h-auto object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
+
+                {/* Floating UI Elements */}
+                <div className="absolute top-4 left-4 bg-white/10 backdrop-blur-md rounded-lg p-3 border border-white/20">
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    <span className="text-white text-sm font-medium">Real-time Translation</span>
+                  </div>
+                </div>
+
+                <div className="absolute bottom-4 right-4 bg-white/10 backdrop-blur-md rounded-lg p-3 border border-white/20">
+                  <div className="text-white text-sm">
+                    <div className="font-medium">🇺🇸 → 🇿🇦</div>
+                    <div className="text-xs opacity-80">English to Zulu</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
