@@ -556,14 +556,51 @@ export default function Index() {
                     <span>Export conversation logs to spreadsheets</span>
                   </div>
                 </div>
-                <Button
-                  size="lg"
-                  className={`gradient-primary hover:opacity-90 transition-opacity ${isRecording ? 'animate-pulse' : ''}`}
-                  onClick={toggleRecording}
-                >
-                  <Mic className="w-5 h-5 mr-2" />
-                  {isRecording ? `Recording... ${formatTime(recordingTime)}` : 'Try Recording Now'}
-                </Button>
+
+                {/* Language Selector */}
+                <div className="mb-6">
+                  <label className="block text-sm font-medium mb-3">🌐 Select Response Language:</label>
+                  <div className="grid grid-cols-3 gap-2">
+                    {supportedLanguages.slice(0, 6).map((lang) => (
+                      <button
+                        key={lang.code}
+                        onClick={() => setSelectedLanguage(lang.code)}
+                        className={`p-2 rounded-lg border text-sm transition-all ${
+                          selectedLanguage === lang.code
+                            ? 'border-primary bg-primary/10 text-primary'
+                            : 'border-border hover:border-primary/50'
+                        }`}
+                      >
+                        <span className="text-lg">{lang.flag}</span>
+                        <div className="text-xs">{lang.name}</div>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="space-y-3">
+                  <Button
+                    size="lg"
+                    className={`w-full gradient-primary hover:opacity-90 transition-opacity ${isRecording ? 'animate-pulse' : ''}`}
+                    onClick={toggleRecording}
+                    disabled={isTranslating || isGeneratingResponse}
+                  >
+                    <Mic className="w-5 h-5 mr-2" />
+                    {isRecording ? `Recording... ${formatTime(recordingTime)}` : 'Try Recording Now'}
+                  </Button>
+
+                  {audioBlob && !isRecording && (
+                    <Button
+                      size="lg"
+                      className="w-full bg-accent hover:bg-accent/90 transition-opacity"
+                      onClick={processRecordingWithAI}
+                      disabled={isTranslating || isGeneratingResponse}
+                    >
+                      <Globe className="w-5 h-5 mr-2" />
+                      {isTranslating ? 'Processing with AI...' : isGeneratingResponse ? 'Generating Response...' : 'Translate & Get AI Response'}
+                    </Button>
+                  )}
+                </div>
               </div>
 
               <div className="relative">
