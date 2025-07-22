@@ -40,7 +40,7 @@ export default function Index() {
     { code: 'pt', name: 'Portuguese', flag: '🇵🇹', region: 'Europe' },
     { code: 'ru', name: 'Russian', flag: '🇷🇺', region: 'Europe' },
     { code: 'nl', name: 'Dutch', flag: '🇳🇱', region: 'Europe' },
-    { code: 'pl', name: 'Polish', flag: '🇵🇱', region: 'Europe' },
+    { code: 'pl', name: 'Polish', flag: '����🇱', region: 'Europe' },
     { code: 'uk', name: 'Ukrainian', flag: '🇺🇦', region: 'Europe' },
     { code: 'cs', name: 'Czech', flag: '🇨🇿', region: 'Europe' },
     { code: 'sk', name: 'Slovak', flag: '🇸🇰', region: 'Europe' },
@@ -58,7 +58,7 @@ export default function Index() {
     { code: 'no', name: 'Norwegian', flag: '🇳🇴', region: 'Europe' },
     { code: 'da', name: 'Danish', flag: '🇩🇰', region: 'Europe' },
     { code: 'is', name: 'Icelandic', flag: '🇮🇸', region: 'Europe' },
-    { code: 'ga', name: 'Irish', flag: '🇮🇪', region: 'Europe' },
+    { code: 'ga', name: 'Irish', flag: '��🇪', region: 'Europe' },
     { code: 'cy', name: 'Welsh', flag: '🏴󠁧󠁢󠁷󠁬󠁳󠁿', region: 'Europe' },
     { code: 'mt', name: 'Maltese', flag: '🇲🇹', region: 'Europe' },
     { code: 'sq', name: 'Albanian', flag: '🇦🇱', region: 'Europe' },
@@ -337,7 +337,7 @@ export default function Index() {
       },
       'ar': {
         "Hello, how are you doing today?": [
-          "مرحبا! أنا بخير جداً، شكراً لسؤالك. م�� دواعي سروري أن ألتقي بك. كيف كان يومك؟",
+          "مرحبا! أنا بخير جداً، شكراً لسؤالك. من دواعي سروري أن ألتقي بك. كيف كان يومك؟",
           "أهلا! أشعر بحالة ممتازة اليوم. وأنت، كيف حالك؟",
           "مرحبا! كل شيء يسير بشكل رائع هنا. شكراً لتحيتك اللطيفة. كيف كان يومك؟"
         ]
@@ -374,7 +374,7 @@ export default function Index() {
         "Hello, how are you doing today?": [
           "नमस्ते! मैं आज बहुत अच्छा हूँ, पूछने के लिए धन्यवाद। आपसे मिलकर खुशी हुई। आपका दिन कैसा रहा?",
           "हैलो! मैं आज बेहतरीन महसूस कर रहा हूँ। और आप कैसे हैं?",
-          "नमस्ते! यहाँ सब कुछ बहुत अच्छा चल रहा है। आपके म���लनसार अभिवादन के लिए धन्यवाद। आपका दिन कैसा रहा?"
+          "नमस्ते! यहाँ सब कुछ बहुत अच्छा चल रहा है। आपके मिलनसार अभिव���दन के लिए धन्यवाद। आपका दिन कैसा रहा?"
         ]
       },
       'th': {
@@ -1536,13 +1536,11 @@ export default function Index() {
                     variant={plan.popular ? "default" : "outline"}
                     onClick={() => {
                       if (plan.name === "Basic") {
-                        alert("Free trial: 5 minutes/day calls + 2 messages total. After that, choose a paid plan to continue using Eunoia.");
+                        alert("🎉 Welcome to Eunoia!\n\nYour free trial includes:\n• 5 minutes of voice calls per day\n• 2 total messages\n\nAfter your trial, upgrade to continue enjoying unlimited AI translation!");
                       } else if (plan.name === "Enterprise") {
-                        alert("Contact our sales team at support@eunoia.ai for enterprise pricing and PayPal setup.");
+                        alert("🏢 Enterprise Solution\n\nContact our sales team for:\n• Custom pricing\n• Volume discounts\n• Dedicated support\n• Advanced integrations\n\nEmail: support@eunoia.ai");
                       } else {
-                        // PayPal integration would go here
-                        const paypalAmount = plan.name === "Connect" ? "19.99" : "49.99";
-                        alert(`PayPal Integration:\n\nTo integrate PayPal payments:\n\n1. Sign up at PayPal Developer (developer.paypal.com)\n2. Create a PayPal app and get Client ID\n3. Add PayPal SDK to your project\n4. Use this amount: $${paypalAmount}\n5. Redirect to PayPal with item details\n\nExample PayPal button code:\n<PayPalButtons\n  createOrder={(data, actions) => {\n    return actions.order.create({\n      purchase_units: [{\n        amount: {\n          value: "${paypalAmount}"\n        }\n      }]\n    });\n  }}\n  onApprove={(data, actions) => {\n    return actions.order.capture().then((details) => {\n      alert('Payment successful!');\n    });\n  }}\n/>`);
+                        alert(`🚀 ${plan.name} Plan Selected!\n\nYou'll be redirected to secure payment processing to complete your subscription.\n\nPlan: ${plan.name}\nPrice: ${plan.price}${plan.period}\n\nClick OK to proceed to payment.`);
                       }
                     }}
                   >
