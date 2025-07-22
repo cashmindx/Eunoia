@@ -70,7 +70,7 @@ export default function Index() {
     { code: 'zh-tw', name: 'Chinese (Traditional)', flag: '🇹🇼', region: 'Asia' },
     { code: 'ja', name: 'Japanese', flag: '🇯🇵', region: 'Asia' },
     { code: 'ko', name: 'Korean', flag: '🇰🇷', region: 'Asia' },
-    { code: 'hi', name: 'Hindi', flag: '🇮🇳', region: 'Asia' },
+    { code: 'hi', name: 'Hindi', flag: '🇮����', region: 'Asia' },
     { code: 'bn', name: 'Bengali', flag: '🇧🇩', region: 'Asia' },
     { code: 'ur', name: 'Urdu', flag: '🇵🇰', region: 'Asia' },
     { code: 'ta', name: 'Tamil', flag: '🇮🇳', region: 'Asia' },
@@ -110,7 +110,7 @@ export default function Index() {
     // African Languages
     { code: 'sw', name: 'Swahili', flag: '🇰🇪', region: 'Africa' },
     { code: 'am', name: 'Amharic', flag: '🇪🇹', region: 'Africa' },
-    { code: 'ha', name: 'Hausa', flag: '🇳🇬', region: 'Africa' },
+    { code: 'ha', name: 'Hausa', flag: '🇳��', region: 'Africa' },
     { code: 'yo', name: 'Yoruba', flag: '🇳🇬', region: 'Africa' },
     { code: 'ig', name: 'Igbo', flag: '🇳🇬', region: 'Africa' },
     { code: 'zu', name: 'Zulu', flag: '🇿🇦', region: 'Africa' },
@@ -336,7 +336,7 @@ export default function Index() {
       },
       'hi': {
         "Hello, how are you doing today?": [
-          "नमस्ते! मैं आज बहुत अच्छा हूँ, पूछने के लिए धन्यवाद। आपसे मिलकर खुशी हुई। आपका दिन कैसा रहा?",
+          "नम���्ते! मैं आज बहुत अच्छा हूँ, पूछने के लिए धन्यवाद। आपसे मिलकर खुशी हुई। आपका दिन कैसा रहा?",
           "हैलो! मैं आज बेहतरीन महसूस कर रहा हूँ। और आप कैसे हैं?",
           "नमस्ते! यहाँ सब कुछ बहुत अच्छा चल रहा है। आपके मिलनसार अभिवादन के लिए धन्यवाद। आपका दिन कैसा रहा?"
         ]
@@ -353,6 +353,40 @@ export default function Index() {
           "Xin chào! Hôm nay tôi rất khỏe, cảm ơn bạn đã hỏi. Rất vui được gặp bạn. Ngày hôm nay của bạn thế nào?",
           "Chào bạn! Hôm nay tôi cảm thấy tuyệt vời. Còn bạn thì sao?",
           "Xin chào! Mọi thứ ở đây đều tuyệt vời. Cảm ơn lời chào thân thiện của bạn. Ngày của bạn như thế nào?"
+        ]
+      },
+      'en': {
+        "Hello, how are you doing today?": [
+          "Hello! I'm doing great today, thanks for asking. It's wonderful to meet you. How has your day been going?",
+          "Hi there! I'm feeling excellent today. How about you, how are you doing?",
+          "Hello! Everything is going wonderfully here. Thank you for the friendly greeting. How's your day been?"
+        ],
+        "Nice to meet you, I'm looking forward to our conversation.": [
+          "It's my pleasure! I'm also excited to have this conversation with you. What would you like to talk about?",
+          "Likewise! I love meeting new people. I'm sure we'll have a very interesting conversation.",
+          "How wonderful to meet you! I'm also looking forward to our chat. Is there anything specific you'd like to discuss?"
+        ],
+        "Can you help me understand this better?": [
+          "Of course! I'd be happy to help you understand better. What specifically would you like me to explain?",
+          "Absolutely! I'm here to help. Please let me know what you'd like clarification on.",
+          "Certainly! I'll do my best to help you understand. What part would you like me to elaborate on?"
+        ]
+      },
+      'af': {
+        "Hello, how are you doing today?": [
+          "Hallo! Ek gaan vandag baie goed, dankie dat jy vra. Dis wonderlik om jou te ontmoet. Hoe gaan dit met jou dag?",
+          "Hallo daar! Ek voel uitstekend vandag. En jy, hoe gaan dit met jou?",
+          "Hallo! Alles gaan wonderlik hier. Dankie vir die vriendelike groet. Hoe was jou dag?"
+        ],
+        "Nice to meet you, I'm looking forward to our conversation.": [
+          "Dis my plesier! Ek is ook opgewonde om hierdie gesprek met jou te hê. Waaroor wil jy gesels?",
+          "Insgelyks! Ek hou daarvan om nuwe mense te ontmoet. Ek weet ons gaan 'n baie interessante gesprek hê.",
+          "Hoe wonderlik om jou te ontmoet! Ek sien ook uit na ons geselsie. Is daar iets spesifieks waaroor jy wil praat?"
+        ],
+        "Can you help me understand this better?": [
+          "Natuurlik! Ek sal graag wil help dat jy dit beter verstaan. Wat spesifiek wil jy hê moet ek verduidelik?",
+          "Absoluut! Ek is hier om te help. Laat weet my asseblief waaroor jy verduideliking wil hê.",
+          "Beslis! Ek sal my beste probeer om jou te help verstaan. Watter deel wil jy hê moet ek uitbrei?"
         ]
       }
     };
