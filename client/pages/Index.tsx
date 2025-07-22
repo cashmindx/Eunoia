@@ -363,27 +363,79 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Technology Stack Section */}
+      {/* Getting Started Section */}
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-8">
-              How <span className="gradient-text">Eunoia Works</span>
+              Getting <span className="gradient-text">Started</span>
             </h2>
+            <p className="text-xl text-muted-foreground mb-12">
+              Start using Eunoia in just a few simple steps
+            </p>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
+              <div className="p-6 rounded-lg bg-muted/20 border border-border/50">
+                <div className="w-12 h-12 gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-white font-bold">1</span>
+                </div>
+                <h3 className="text-lg font-semibold mb-2">Sign Up</h3>
+                <p className="text-sm text-muted-foreground">Create your free account</p>
+              </div>
+
+              <div className="p-6 rounded-lg bg-muted/20 border border-border/50">
+                <div className="w-12 h-12 gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-white font-bold">2</span>
+                </div>
+                <h3 className="text-lg font-semibold mb-2">Allow Microphone</h3>
+                <p className="text-sm text-muted-foreground">Give permission to record</p>
+              </div>
+
+              <div className="p-6 rounded-lg bg-muted/20 border border-border/50">
+                <div className="w-12 h-12 gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-white font-bold">3</span>
+                </div>
+                <h3 className="text-lg font-semibold mb-2">Choose Language</h3>
+                <p className="text-sm text-muted-foreground">Pick your target language</p>
+              </div>
+
+              <div className="p-6 rounded-lg bg-muted/20 border border-border/50">
+                <div className="w-12 h-12 gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-white font-bold">4</span>
+                </div>
+                <h3 className="text-lg font-semibold mb-2">Start Speaking</h3>
+                <p className="text-sm text-muted-foreground">Press record and talk</p>
+              </div>
+
+              <div className="p-6 rounded-lg bg-muted/20 border border-border/50">
+                <div className="w-12 h-12 gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-white font-bold">5</span>
+                </div>
+                <h3 className="text-lg font-semibold mb-2">Get Feedback</h3>
+                <p className="text-sm text-muted-foreground">See live translations & tips</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Technology Stack */}
+          <div className="max-w-4xl mx-auto text-center">
+            <h3 className="text-2xl md:text-3xl font-bold mb-8">
+              How <span className="gradient-text">Eunoia Works</span>
+            </h3>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="p-6 rounded-lg bg-muted/20 border border-border/50">
                 <Brain className="w-12 h-12 text-primary mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-2">Google Gemini AI</h3>
+                <h4 className="text-xl font-semibold mb-2">Google Gemini AI</h4>
                 <p className="text-muted-foreground">Smart language understanding and cultural knowledge</p>
               </div>
               <div className="p-6 rounded-lg bg-muted/20 border border-border/50">
                 <MessageCircle className="w-12 h-12 text-primary mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-2">Voice Recognition</h3>
+                <h4 className="text-xl font-semibold mb-2">Voice Recognition</h4>
                 <p className="text-muted-foreground">Google Speech-to-Text for clear voice recording and translation</p>
               </div>
               <div className="p-6 rounded-lg bg-muted/20 border border-border/50">
-                <Shield className="w-12 h-12 text-primary mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-2">Voice Output</h3>
+                <HeadphonesIcon className="w-12 h-12 text-primary mx-auto mb-4" />
+                <h4 className="text-xl font-semibold mb-2">Voice Output</h4>
                 <p className="text-muted-foreground">Google Text-to-Speech for natural-sounding translations</p>
               </div>
             </div>
