@@ -857,9 +857,9 @@ export default function Index() {
                   {/* Popular Languages (Quick Select) */}
                   <div className="mb-4">
                     <div className="text-xs text-muted-foreground mb-2">Popular Languages:</div>
-                    <div className="grid grid-cols-3 gap-2">
+                    <div className="grid grid-cols-4 gap-2">
                       {supportedLanguages.filter(lang =>
-                        ['es', 'fr', 'de', 'zh', 'ja', 'ar'].includes(lang.code)
+                        ['en', 'es', 'fr', 'de', 'zh', 'ja', 'ar', 'af'].includes(lang.code)
                       ).map((lang) => (
                         <button
                           key={lang.code}
