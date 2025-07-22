@@ -19,20 +19,108 @@ export default function Index() {
   const [recognizedText, setRecognizedText] = useState('');
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Supported languages for translation
+  // Supported languages for translation (100+ languages)
   const supportedLanguages = [
-    { code: 'es', name: 'Spanish', flag: '🇪🇸' },
-    { code: 'fr', name: 'French', flag: '🇫🇷' },
-    { code: 'de', name: 'German', flag: '🇩🇪' },
-    { code: 'it', name: 'Italian', flag: '🇮🇹' },
-    { code: 'pt', name: 'Portuguese', flag: '🇵🇹' },
-    { code: 'ru', name: 'Russian', flag: '🇷🇺' },
-    { code: 'ja', name: 'Japanese', flag: '🇯🇵' },
-    { code: 'ko', name: 'Korean', flag: '🇰🇷' },
-    { code: 'zh', name: 'Chinese', flag: '🇨🇳' },
-    { code: 'ar', name: 'Arabic', flag: '🇸🇦' },
-    { code: 'hi', name: 'Hindi', flag: '🇮🇳' },
-    { code: 'nl', name: 'Dutch', flag: '🇳🇱' }
+    // Major European Languages
+    { code: 'es', name: 'Spanish', flag: '🇪🇸', region: 'Europe' },
+    { code: 'fr', name: 'French', flag: '🇫🇷', region: 'Europe' },
+    { code: 'de', name: 'German', flag: '🇩🇪', region: 'Europe' },
+    { code: 'it', name: 'Italian', flag: '🇮🇹', region: 'Europe' },
+    { code: 'pt', name: 'Portuguese', flag: '🇵🇹', region: 'Europe' },
+    { code: 'ru', name: 'Russian', flag: '🇷🇺', region: 'Europe' },
+    { code: 'nl', name: 'Dutch', flag: '🇳🇱', region: 'Europe' },
+    { code: 'pl', name: 'Polish', flag: '🇵🇱', region: 'Europe' },
+    { code: 'uk', name: 'Ukrainian', flag: '🇺🇦', region: 'Europe' },
+    { code: 'cs', name: 'Czech', flag: '🇨🇿', region: 'Europe' },
+    { code: 'sk', name: 'Slovak', flag: '🇸🇰', region: 'Europe' },
+    { code: 'hu', name: 'Hungarian', flag: '🇭🇺', region: 'Europe' },
+    { code: 'ro', name: 'Romanian', flag: '🇷🇴', region: 'Europe' },
+    { code: 'bg', name: 'Bulgarian', flag: '🇧🇬', region: 'Europe' },
+    { code: 'hr', name: 'Croatian', flag: '🇭🇷', region: 'Europe' },
+    { code: 'sr', name: 'Serbian', flag: '🇷🇸', region: 'Europe' },
+    { code: 'sl', name: 'Slovenian', flag: '🇸🇮', region: 'Europe' },
+    { code: 'lt', name: 'Lithuanian', flag: '🇱🇹', region: 'Europe' },
+    { code: 'lv', name: 'Latvian', flag: '🇱🇻', region: 'Europe' },
+    { code: 'et', name: 'Estonian', flag: '🇪🇪', region: 'Europe' },
+    { code: 'fi', name: 'Finnish', flag: '🇫🇮', region: 'Europe' },
+    { code: 'sv', name: 'Swedish', flag: '🇸🇪', region: 'Europe' },
+    { code: 'no', name: 'Norwegian', flag: '🇳🇴', region: 'Europe' },
+    { code: 'da', name: 'Danish', flag: '🇩🇰', region: 'Europe' },
+    { code: 'is', name: 'Icelandic', flag: '🇮🇸', region: 'Europe' },
+    { code: 'ga', name: 'Irish', flag: '🇮🇪', region: 'Europe' },
+    { code: 'cy', name: 'Welsh', flag: '🏴󠁧󠁢󠁷󠁬󠁳󠁿', region: 'Europe' },
+    { code: 'mt', name: 'Maltese', flag: '🇲🇹', region: 'Europe' },
+    { code: 'sq', name: 'Albanian', flag: '🇦🇱', region: 'Europe' },
+    { code: 'mk', name: 'Macedonian', flag: '🇲🇰', region: 'Europe' },
+    { code: 'bs', name: 'Bosnian', flag: '🇧🇦', region: 'Europe' },
+
+    // Asian Languages
+    { code: 'zh', name: 'Chinese (Mandarin)', flag: '🇨🇳', region: 'Asia' },
+    { code: 'zh-tw', name: 'Chinese (Traditional)', flag: '🇹🇼', region: 'Asia' },
+    { code: 'ja', name: 'Japanese', flag: '🇯🇵', region: 'Asia' },
+    { code: 'ko', name: 'Korean', flag: '🇰🇷', region: 'Asia' },
+    { code: 'hi', name: 'Hindi', flag: '🇮🇳', region: 'Asia' },
+    { code: 'bn', name: 'Bengali', flag: '🇧🇩', region: 'Asia' },
+    { code: 'ur', name: 'Urdu', flag: '🇵🇰', region: 'Asia' },
+    { code: 'ta', name: 'Tamil', flag: '🇮🇳', region: 'Asia' },
+    { code: 'te', name: 'Telugu', flag: '🇮🇳', region: 'Asia' },
+    { code: 'mr', name: 'Marathi', flag: '🇮🇳', region: 'Asia' },
+    { code: 'gu', name: 'Gujarati', flag: '🇮🇳', region: 'Asia' },
+    { code: 'kn', name: 'Kannada', flag: '🇮🇳', region: 'Asia' },
+    { code: 'ml', name: 'Malayalam', flag: '🇮🇳', region: 'Asia' },
+    { code: 'pa', name: 'Punjabi', flag: '🇮🇳', region: 'Asia' },
+    { code: 'ne', name: 'Nepali', flag: '🇳🇵', region: 'Asia' },
+    { code: 'si', name: 'Sinhala', flag: '🇱🇰', region: 'Asia' },
+    { code: 'my', name: 'Myanmar (Burmese)', flag: '🇲🇲', region: 'Asia' },
+    { code: 'th', name: 'Thai', flag: '🇹🇭', region: 'Asia' },
+    { code: 'vi', name: 'Vietnamese', flag: '🇻🇳', region: 'Asia' },
+    { code: 'lo', name: 'Lao', flag: '🇱🇦', region: 'Asia' },
+    { code: 'km', name: 'Khmer', flag: '🇰🇭', region: 'Asia' },
+    { code: 'ms', name: 'Malay', flag: '🇲🇾', region: 'Asia' },
+    { code: 'id', name: 'Indonesian', flag: '🇮🇩', region: 'Asia' },
+    { code: 'tl', name: 'Filipino', flag: '🇵🇭', region: 'Asia' },
+    { code: 'mn', name: 'Mongolian', flag: '🇲🇳', region: 'Asia' },
+    { code: 'ka', name: 'Georgian', flag: '🇬🇪', region: 'Asia' },
+    { code: 'hy', name: 'Armenian', flag: '🇦🇲', region: 'Asia' },
+    { code: 'az', name: 'Azerbaijani', flag: '🇦🇿', region: 'Asia' },
+    { code: 'kk', name: 'Kazakh', flag: '🇰🇿', region: 'Asia' },
+    { code: 'ky', name: 'Kyrgyz', flag: '🇰🇬', region: 'Asia' },
+    { code: 'uz', name: 'Uzbek', flag: '🇺🇿', region: 'Asia' },
+    { code: 'tk', name: 'Turkmen', flag: '🇹🇲', region: 'Asia' },
+    { code: 'tg', name: 'Tajik', flag: '🇹🇯', region: 'Asia' },
+
+    // Middle Eastern Languages
+    { code: 'ar', name: 'Arabic', flag: '🇸🇦', region: 'Middle East' },
+    { code: 'fa', name: 'Persian', flag: '🇮🇷', region: 'Middle East' },
+    { code: 'tr', name: 'Turkish', flag: '🇹🇷', region: 'Middle East' },
+    { code: 'he', name: 'Hebrew', flag: '🇮🇱', region: 'Middle East' },
+    { code: 'ku', name: 'Kurdish', flag: '🏴', region: 'Middle East' },
+
+    // African Languages
+    { code: 'sw', name: 'Swahili', flag: '🇰🇪', region: 'Africa' },
+    { code: 'am', name: 'Amharic', flag: '🇪🇹', region: 'Africa' },
+    { code: 'ha', name: 'Hausa', flag: '🇳🇬', region: 'Africa' },
+    { code: 'yo', name: 'Yoruba', flag: '🇳🇬', region: 'Africa' },
+    { code: 'ig', name: 'Igbo', flag: '🇳🇬', region: 'Africa' },
+    { code: 'zu', name: 'Zulu', flag: '🇿🇦', region: 'Africa' },
+    { code: 'xh', name: 'Xhosa', flag: '🇿🇦', region: 'Africa' },
+    { code: 'af', name: 'Afrikaans', flag: '🇿🇦', region: 'Africa' },
+    { code: 'mg', name: 'Malagasy', flag: '🇲🇬', region: 'Africa' },
+    { code: 'rw', name: 'Kinyarwanda', flag: '🇷🇼', region: 'Africa' },
+    { code: 'so', name: 'Somali', flag: '🇸🇴', region: 'Africa' },
+
+    // Americas Languages
+    { code: 'en', name: 'English', flag: '🇺🇸', region: 'Americas' },
+    { code: 'pt-br', name: 'Portuguese (Brazil)', flag: '🇧🇷', region: 'Americas' },
+    { code: 'qu', name: 'Quechua', flag: '🇵🇪', region: 'Americas' },
+    { code: 'gn', name: 'Guarani', flag: '🇵🇾', region: 'Americas' },
+
+    // Pacific Languages
+    { code: 'haw', name: 'Hawaiian', flag: '🇺🇸', region: 'Pacific' },
+    { code: 'mi', name: 'Maori', flag: '🇳🇿', region: 'Pacific' },
+    { code: 'fj', name: 'Fijian', flag: '🇫🇯', region: 'Pacific' },
+    { code: 'to', name: 'Tongan', flag: '🇹🇴', region: 'Pacific' },
+    { code: 'sm', name: 'Samoan', flag: '🇼🇸', region: 'Pacific' }
   ];
 
   // Timer effect for recording
@@ -169,7 +257,7 @@ export default function Index() {
         "Hello, how are you doing today?": [
           "¡Hola! Estoy muy bien, gracias por preguntar. Es un placer conocerte. ¿Cómo ha sido tu día?",
           "¡Qué gusto saludarte! Me siento excelente hoy. ¿Y tú, cómo te encuentras?",
-          "��Hola! Todo va de maravilla por aquí. Gracias por tu amable saludo. ¿Qué tal tu día?"
+          "¡Hola! Todo va de maravilla por aquí. Gracias por tu amable saludo. ¿Qué tal tu día?"
         ],
         "Nice to meet you, I'm looking forward to our conversation.": [
           "¡El placer es mío! También estoy emocionado de poder conversar contigo. ¿De qué te gustaría hablar?",
