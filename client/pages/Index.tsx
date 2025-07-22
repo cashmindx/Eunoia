@@ -142,8 +142,8 @@ export default function Index() {
               <Link to="/contact" className="text-muted-foreground hover:text-foreground transition-colors">Contact</Link>
             </div>
             <div className="flex items-center space-x-4">
-              <Button variant="ghost">Sign In</Button>
-              <Button className="gradient-primary hover:opacity-90 transition-opacity">Get Started</Button>
+              <Button variant="ghost" onClick={() => alert('Sign In functionality coming soon!')}>Sign In</Button>
+              <Button className="gradient-primary hover:opacity-90 transition-opacity" onClick={() => window.scrollTo({ top: document.getElementById('pricing')?.offsetTop || 0, behavior: 'smooth' })}>Get Started</Button>
             </div>
           </div>
         </div>
@@ -166,11 +166,11 @@ export default function Index() {
               Eunoia is a powerful AI partner that helps you communicate across different cultures with empathy and precision. It goes far beyond translation to help you connect with people in a real, meaningful way.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button size="lg" className="gradient-primary hover:opacity-90 transition-opacity px-8 py-3 text-lg">
+              <Button size="lg" className="gradient-primary hover:opacity-90 transition-opacity px-8 py-3 text-lg" onClick={() => window.scrollTo({ top: document.getElementById('pricing')?.offsetTop || 0, behavior: 'smooth' })}>
                 <Zap className="w-5 h-5 mr-2" />
                 Start Your Free Trial
               </Button>
-              <Button size="lg" variant="outline" className="px-8 py-3 text-lg">
+              <Button size="lg" variant="outline" className="px-8 py-3 text-lg" onClick={() => alert('Demo video coming soon! For now, scroll down to see all features.')}>
                 Watch Demo
               </Button>
             </div>
@@ -211,7 +211,7 @@ export default function Index() {
                     <span>Export conversation logs to spreadsheets</span>
                   </div>
                 </div>
-                <Button size="lg" className="gradient-primary hover:opacity-90 transition-opacity">
+                <Button size="lg" className="gradient-primary hover:opacity-90 transition-opacity" onClick={() => alert('Recording feature coming soon! This will open the voice recording interface.')}>
                   <Mic className="w-5 h-5 mr-2" />
                   Try Recording Now
                 </Button>
@@ -245,11 +245,11 @@ export default function Index() {
                   </div>
 
                   <div className="mt-6 flex space-x-3">
-                    <Button variant="outline" size="sm" className="flex-1">
+                    <Button variant="outline" size="sm" className="flex-1" onClick={() => alert('Audio playback feature coming soon!')}>
                       <HeadphonesIcon className="w-4 h-4 mr-2" />
                       Play Audio
                     </Button>
-                    <Button variant="outline" size="sm" className="flex-1">
+                    <Button variant="outline" size="sm" className="flex-1" onClick={() => alert('Export to spreadsheet feature coming soon!')}>
                       Export
                     </Button>
                   </div>
@@ -458,10 +458,10 @@ export default function Index() {
             Join people who use Eunoia to have better conversations and build stronger relationships across cultures.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" className="gradient-primary hover:opacity-90 transition-opacity px-8 py-3 text-lg">
+            <Button size="lg" className="gradient-primary hover:opacity-90 transition-opacity px-8 py-3 text-lg" onClick={() => window.scrollTo({ top: document.getElementById('pricing')?.offsetTop || 0, behavior: 'smooth' })}>
               Start Your Free Trial
             </Button>
-            <Button size="lg" variant="outline" className="px-8 py-3 text-lg">
+            <Button size="lg" variant="outline" className="px-8 py-3 text-lg" onClick={() => alert('To schedule a demo, please contact us at support@eunoia.ai')}>
               Schedule a Demo
             </Button>
           </div>
