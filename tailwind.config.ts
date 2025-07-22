@@ -51,7 +51,7 @@ export default {
           purple: "#8B5CF6",
           coral: "#FF6B6B",
           blue: "#3B82F6",
-          gradient: "linear-gradient(135deg, #8B5CF6 0%, #FF6B6B 100%)"
+          gradient: "linear-gradient(135deg, #8B5CF6 0%, #FF6B6B 100%)",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",

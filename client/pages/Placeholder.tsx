@@ -21,7 +21,8 @@ export default function Placeholder({ title, description }: PlaceholderProps) {
         <CardContent className="space-y-4">
           <p className="text-muted-foreground">{description}</p>
           <p className="text-sm text-muted-foreground">
-            This page is coming soon! Continue prompting to help us build out the specific features and content you'd like to see here.
+            This page is coming soon! Continue prompting to help us build out
+            the specific features and content you'd like to see here.
           </p>
           <Link to="/">
             <Button className="gradient-primary hover:opacity-90 transition-opacity">
