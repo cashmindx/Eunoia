@@ -351,9 +351,13 @@ export default function Index() {
                     <span>Export conversation logs to spreadsheets</span>
                   </div>
                 </div>
-                <Button size="lg" className="gradient-primary hover:opacity-90 transition-opacity" onClick={() => alert('Recording feature coming soon! This will open the voice recording interface.')}>
+                <Button
+                  size="lg"
+                  className={`gradient-primary hover:opacity-90 transition-opacity ${isRecording ? 'animate-pulse' : ''}`}
+                  onClick={toggleRecording}
+                >
                   <Mic className="w-5 h-5 mr-2" />
-                  Try Recording Now
+                  {isRecording ? `Recording... ${formatTime(recordingTime)}` : 'Try Recording Now'}
                 </Button>
               </div>
 
