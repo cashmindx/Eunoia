@@ -17,6 +17,9 @@ export default function Index() {
   const [aiResponse, setAiResponse] = useState('');
   const [isGeneratingResponse, setIsGeneratingResponse] = useState(false);
   const [recognizedText, setRecognizedText] = useState('');
+  const [showAllLanguages, setShowAllLanguages] = useState(false);
+  const [languageSearch, setLanguageSearch] = useState('');
+  const [selectedRegion, setSelectedRegion] = useState('all');
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   // Supported languages for translation (100+ languages)
