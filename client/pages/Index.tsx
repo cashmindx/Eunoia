@@ -144,8 +144,18 @@ export default function Index() {
               <Link to="/contact" className="text-muted-foreground hover:text-foreground transition-colors">Contact</Link>
             </div>
             <div className="flex items-center space-x-4">
-              <Button variant="ghost" onClick={() => alert('Sign In functionality coming soon!')}>Sign In</Button>
-              <Button className="gradient-primary hover:opacity-90 transition-opacity" onClick={() => window.scrollTo({ top: document.getElementById('pricing')?.offsetTop || 0, behavior: 'smooth' })}>Get Started</Button>
+              <div className="hidden md:flex items-center space-x-4">
+                <Button variant="ghost" onClick={() => alert('Sign In functionality coming soon!')}>Sign In</Button>
+                <Button className="gradient-primary hover:opacity-90 transition-opacity" onClick={() => window.scrollTo({ top: document.getElementById('pricing')?.offsetTop || 0, behavior: 'smooth' })}>Get Started</Button>
+              </div>
+              <Button
+                variant="ghost"
+                size="sm"
+                className="md:hidden"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              >
+                {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              </Button>
             </div>
           </div>
         </div>
