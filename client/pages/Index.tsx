@@ -70,7 +70,7 @@ export default function Index() {
     { code: 'zh-tw', name: 'Chinese (Traditional)', flag: '🇹🇼', region: 'Asia' },
     { code: 'ja', name: 'Japanese', flag: '🇯🇵', region: 'Asia' },
     { code: 'ko', name: 'Korean', flag: '🇰🇷', region: 'Asia' },
-    { code: 'hi', name: 'Hindi', flag: '🇮����', region: 'Asia' },
+    { code: 'hi', name: 'Hindi', flag: '🇮🇳', region: 'Asia' },
     { code: 'bn', name: 'Bengali', flag: '🇧🇩', region: 'Asia' },
     { code: 'ur', name: 'Urdu', flag: '🇵🇰', region: 'Asia' },
     { code: 'ta', name: 'Tamil', flag: '🇮🇳', region: 'Asia' },
@@ -110,7 +110,7 @@ export default function Index() {
     // African Languages
     { code: 'sw', name: 'Swahili', flag: '🇰🇪', region: 'Africa' },
     { code: 'am', name: 'Amharic', flag: '🇪🇹', region: 'Africa' },
-    { code: 'ha', name: 'Hausa', flag: '🇳��', region: 'Africa' },
+    { code: 'ha', name: 'Hausa', flag: '🇳🇬', region: 'Africa' },
     { code: 'yo', name: 'Yoruba', flag: '🇳🇬', region: 'Africa' },
     { code: 'ig', name: 'Igbo', flag: '🇳🇬', region: 'Africa' },
     { code: 'zu', name: 'Zulu', flag: '🇿🇦', region: 'Africa' },
@@ -249,6 +249,20 @@ export default function Index() {
         "Can you help me understand this better?": "Können Sie mir helfen, das besser zu verstehen?",
         "Thank you for your time and assistance.": "Vielen Dank für Ihre Zeit und Hilfe.",
         "I hope you have a wonderful day.": "Ich hoffe, Sie haben einen wundervollen Tag."
+      },
+      'en': {
+        "Hello, how are you doing today?": "Hello, how are you doing today?",
+        "Nice to meet you, I'm looking forward to our conversation.": "Nice to meet you, I'm looking forward to our conversation.",
+        "Can you help me understand this better?": "Can you help me understand this better?",
+        "Thank you for your time and assistance.": "Thank you for your time and assistance.",
+        "I hope you have a wonderful day.": "I hope you have a wonderful day."
+      },
+      'af': {
+        "Hello, how are you doing today?": "Hallo, hoe gaan dit vandag met jou?",
+        "Nice to meet you, I'm looking forward to our conversation.": "Aangename kennis, ek sien uit na ons gesprek.",
+        "Can you help me understand this better?": "Kan jy my help om dit beter te verstaan?",
+        "Thank you for your time and assistance.": "Dankie vir jou tyd en hulp.",
+        "I hope you have a wonderful day.": "Ek hoop jy het 'n wonderlike dag."
       }
     };
 
@@ -336,8 +350,8 @@ export default function Index() {
       },
       'hi': {
         "Hello, how are you doing today?": [
-          "नम���्ते! मैं आज बहुत अच्छा हूँ, पूछने के लिए धन्यवाद। आपसे मिलकर खुशी हुई। आपका दिन कैसा रहा?",
-          "हैलो! मैं आज बेहतरीन महसूस कर रहा हूँ। और आप कैसे हैं?",
+          "नमस्ते! मैं आज बहुत अच्छा हूँ, पूछने के लिए धन्यवाद। आपसे मिलकर खुशी हुई। आपका दिन कैसा रहा?",
+          "हैल���! मैं आज बेहतरीन महसूस कर रहा हूँ। और आप कैसे हैं?",
           "नमस्ते! यहाँ सब कुछ बहुत अच्छा चल रहा है। आपके मिलनसार अभिवादन के लिए धन्यवाद। आपका दिन कैसा रहा?"
         ]
       },
