@@ -173,6 +173,88 @@ export default function Index() {
         </div>
       </section>
 
+      {/* Recording Feature Highlight */}
+      <section className="py-20 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <Badge className="mb-6 px-4 py-2 bg-primary/10 text-primary border-primary/20">
+                  New Feature
+                </Badge>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                  Record & Translate <span className="gradient-text">Any Conversation</span>
+                </h2>
+                <p className="text-xl text-muted-foreground mb-8">
+                  Record your conversations and get instant AI translation in any language you choose. Perfect for business meetings, phone calls, and face-to-face chats.
+                </p>
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center space-x-3">
+                    <Mic className="w-5 h-5 text-primary" />
+                    <span>One-tap recording for any conversation</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Globe className="w-5 h-5 text-primary" />
+                    <span>Instant translation to 100+ languages</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <HeadphonesIcon className="w-5 h-5 text-primary" />
+                    <span>Natural voice playback in target language</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <BarChart3 className="w-5 h-5 text-primary" />
+                    <span>Export conversation logs to spreadsheets</span>
+                  </div>
+                </div>
+                <Button size="lg" className="gradient-primary hover:opacity-90 transition-opacity">
+                  <Mic className="w-5 h-5 mr-2" />
+                  Try Recording Now
+                </Button>
+              </div>
+
+              <div className="relative">
+                <div className="glass-effect p-8 rounded-2xl border border-border/50">
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
+                      <span className="text-sm font-medium">Recording...</span>
+                    </div>
+                    <div className="text-sm text-muted-foreground">2:34</div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div className="bg-primary/10 rounded-lg p-4">
+                      <div className="text-sm text-muted-foreground mb-1">You (English)</div>
+                      <div>"Hello, nice to meet you. How are you doing today?"</div>
+                    </div>
+
+                    <div className="bg-accent/10 rounded-lg p-4">
+                      <div className="text-sm text-muted-foreground mb-1">Translation (Spanish)</div>
+                      <div>"Hola, mucho gusto en conocerte. ¿Cómo estás hoy?"</div>
+                    </div>
+
+                    <div className="bg-secondary/20 rounded-lg p-4">
+                      <div className="text-sm text-primary font-medium mb-1">💡 Cultural Tip</div>
+                      <div className="text-sm">In Spanish culture, asking about family shows genuine interest and builds trust.</div>
+                    </div>
+                  </div>
+
+                  <div className="mt-6 flex space-x-3">
+                    <Button variant="outline" size="sm" className="flex-1">
+                      <HeadphonesIcon className="w-4 h-4 mr-2" />
+                      Play Audio
+                    </Button>
+                    <Button variant="outline" size="sm" className="flex-1">
+                      Export
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section id="features" className="py-20 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
