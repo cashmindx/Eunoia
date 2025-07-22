@@ -63,7 +63,7 @@ export default function Index() {
     { code: 'mt', name: 'Maltese', flag: '🇲🇹', region: 'Europe' },
     { code: 'sq', name: 'Albanian', flag: '🇦🇱', region: 'Europe' },
     { code: 'mk', name: 'Macedonian', flag: '🇲🇰', region: 'Europe' },
-    { code: 'bs', name: 'Bosnian', flag: '🇧🇦', region: 'Europe' },
+    { code: 'bs', name: 'Bosnian', flag: '����🇦', region: 'Europe' },
 
     // Asian Languages
     { code: 'zh', name: 'Chinese (Mandarin)', flag: '🇨🇳', region: 'Asia' },
@@ -323,7 +323,7 @@ export default function Index() {
       },
       'zh': {
         "Hello, how are you doing today?": [
-          "你好！我今天很好，谢谢你的问候。很高兴认识你。你今天过得怎么样？",
+          "你好！我今天很好，谢���你的问候。很高兴认识你。你今天过得怎么样？",
           "你好！我感觉很棒。你呢，你好吗？",
           "你好！我这里一切都很好。谢谢你友好的问候。你今天怎么样？"
         ]
@@ -344,7 +344,7 @@ export default function Index() {
       },
       'ko': {
         "Hello, how are you doing today?": [
-          "안녕하세요! 오늘 정말 좋아요, 물어봐 주셔서 감사합니다. 만나서 반가워요. 오늘 어떠셨어요?",
+          "안녕하��요! 오늘 정말 좋아요, 물어봐 주셔서 감사합니다. 만나서 반가워요. 오늘 어떠셨어요?",
           "안녕하세요! 오늘 기분이 아주 좋아요. 당신은 어떠세요?",
           "안녕하세요! 여기 모든 것이 훌륭해요. 친절한 인사 감사해요. 오늘 어땠어요?"
         ]
@@ -1536,11 +1536,13 @@ export default function Index() {
                     variant={plan.popular ? "default" : "outline"}
                     onClick={() => {
                       if (plan.name === "Basic") {
-                        alert("Sign up for free! This will redirect to the registration page.");
+                        alert("Free trial: 5 minutes/day calls + 2 messages total. After that, choose a paid plan to continue using Eunoia.");
                       } else if (plan.name === "Enterprise") {
-                        alert("Contact our sales team at support@eunoia.ai for enterprise pricing.");
+                        alert("Contact our sales team at support@eunoia.ai for enterprise pricing and PayPal setup.");
                       } else {
-                        alert(`Start your free trial for ${plan.name} plan! This will redirect to the signup page with the ${plan.name} plan selected.`);
+                        // PayPal integration would go here
+                        const paypalAmount = plan.name === "Connect" ? "19.99" : "49.99";
+                        alert(`PayPal Integration:\n\nTo integrate PayPal payments:\n\n1. Sign up at PayPal Developer (developer.paypal.com)\n2. Create a PayPal app and get Client ID\n3. Add PayPal SDK to your project\n4. Use this amount: $${paypalAmount}\n5. Redirect to PayPal with item details\n\nExample PayPal button code:\n<PayPalButtons\n  createOrder={(data, actions) => {\n    return actions.order.create({\n      purchase_units: [{\n        amount: {\n          value: "${paypalAmount}"\n        }\n      }]\n    });\n  }}\n  onApprove={(data, actions) => {\n    return actions.order.capture().then((details) => {\n      alert('Payment successful!');\n    });\n  }}\n/>`);
                       }
                     }}
                   >
