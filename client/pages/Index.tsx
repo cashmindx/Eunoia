@@ -355,9 +355,18 @@ export default function Index() {
                       </li>
                     ))}
                   </ul>
-                  <Button 
+                  <Button
                     className={`w-full ${plan.popular ? 'gradient-primary' : ''}`}
                     variant={plan.popular ? "default" : "outline"}
+                    onClick={() => {
+                      if (plan.name === "Basic") {
+                        alert("Sign up for free! This will redirect to the registration page.");
+                      } else if (plan.name === "Enterprise") {
+                        alert("Contact our sales team at support@eunoia.ai for enterprise pricing.");
+                      } else {
+                        alert(`Start your free trial for ${plan.name} plan! This will redirect to the signup page with the ${plan.name} plan selected.`);
+                      }
+                    }}
                   >
                     {plan.cta}
                   </Button>
