@@ -386,20 +386,41 @@ export default function Index() {
                   </div>
 
                   <div className="space-y-4">
-                    <div className="bg-primary/10 rounded-lg p-4">
-                      <div className="text-sm text-muted-foreground mb-1">You (English)</div>
-                      <div>"Hello, nice to meet you. How are you doing today?"</div>
-                    </div>
+                    {isRecording ? (
+                      <div className="bg-primary/10 rounded-lg p-4 border-l-4 border-primary animate-pulse">
+                        <div className="text-sm text-muted-foreground mb-1">Listening...</div>
+                        <div className="text-primary">🎙️ Speak now to record your voice</div>
+                      </div>
+                    ) : audioBlob ? (
+                      <>
+                        <div className="bg-primary/10 rounded-lg p-4">
+                          <div className="text-sm text-muted-foreground mb-1">Your Recording</div>
+                          <div>✅ Audio recorded successfully! ({formatTime(recordingTime)})</div>
+                        </div>
 
-                    <div className="bg-accent/10 rounded-lg p-4">
-                      <div className="text-sm text-muted-foreground mb-1">Translation (Spanish)</div>
-                      <div>"Hola, mucho gusto en conocerte. ¿Cómo estás hoy?"</div>
-                    </div>
+                        <div className="bg-accent/10 rounded-lg p-4">
+                          <div className="text-sm text-muted-foreground mb-1">Ready for Translation</div>
+                          <div>🌐 Click the buttons below to play or export your recording</div>
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <div className="bg-primary/10 rounded-lg p-4">
+                          <div className="text-sm text-muted-foreground mb-1">Demo Example (English)</div>
+                          <div>"Hello, nice to meet you. How are you doing today?"</div>
+                        </div>
 
-                    <div className="bg-secondary/20 rounded-lg p-4">
-                      <div className="text-sm text-primary font-medium mb-1">💡 Cultural Tip</div>
-                      <div className="text-sm">In Spanish culture, asking about family shows genuine interest and builds trust.</div>
-                    </div>
+                        <div className="bg-accent/10 rounded-lg p-4">
+                          <div className="text-sm text-muted-foreground mb-1">Translation (Spanish)</div>
+                          <div>"Hola, mucho gusto en conocerte. ¿Cómo estás hoy?"</div>
+                        </div>
+
+                        <div className="bg-secondary/20 rounded-lg p-4">
+                          <div className="text-sm text-primary font-medium mb-1">💡 Cultural Tip</div>
+                          <div className="text-sm">Click "Try Recording Now" to test real voice recording!</div>
+                        </div>
+                      </>
+                    )}
                   </div>
 
                   <div className="mt-6 flex space-x-3">
