@@ -311,7 +311,7 @@ export default function Index() {
         "Hello, how are you doing today?": [
           "Bonjour ! Je vais très bien, merci de demander. C'est un plaisir de vous rencontrer. Comment s'est passée votre journée ?",
           "Salut ! Je me sens excellent aujourd'hui. Et vous, comment allez-vous ?",
-          "Bonjour ! Tout va �� merveille ici. Merci pour votre aimable salutation. Comment va votre journée ?"
+          "Bonjour ! Tout va à merveille ici. Merci pour votre aimable salutation. Comment va votre journée ?"
         ]
       },
       'de': {
@@ -337,7 +337,7 @@ export default function Index() {
       },
       'ar': {
         "Hello, how are you doing today?": [
-          "مرحبا! أنا بخير جداً، شكراً لسؤالك. من دواعي سروري أن ألتقي بك. كيف كان يومك؟",
+          "مرحبا! أنا بخير جداً، شكراً لسؤالك. م�� دواعي سروري أن ألتقي بك. كيف كان يومك؟",
           "أهلا! أشعر بحالة ممتازة اليوم. وأنت، كيف حالك؟",
           "مرحبا! كل شيء يسير بشكل رائع هنا. شكراً لتحيتك اللطيفة. كيف كان يومك؟"
         ]
@@ -374,7 +374,7 @@ export default function Index() {
         "Hello, how are you doing today?": [
           "नमस्ते! मैं आज बहुत अच्छा हूँ, पूछने के लिए धन्यवाद। आपसे मिलकर खुशी हुई। आपका दिन कैसा रहा?",
           "हैलो! मैं आज बेहतरीन महसूस कर रहा हूँ। और आप कैसे हैं?",
-          "नमस्ते! यहाँ सब कुछ बहुत अच्छा चल रहा है। आपके मिलनसार अभिवादन के लिए धन्यवाद। आपका दिन कैसा रहा?"
+          "नमस्ते! यहाँ सब कुछ बहुत अच्छा चल रहा है। आपके म���लनसार अभिवादन के लिए धन्यवाद। आपका दिन कैसा रहा?"
         ]
       },
       'th': {
@@ -636,7 +636,7 @@ export default function Index() {
 
       const simulatedOCRTexts = {
         'casual': [
-          "Welcome to Café Luna\nToday's Special: Cappuccino ��3.50\nEspresso €2.00\nCroissant €2.50\nOpen 7AM - 9PM",
+          "Welcome to Café Luna\nToday's Special: Cappuccino €3.50\nEspresso €2.00\nCroissant €2.50\nOpen 7AM - 9PM",
           "Menu\nPasta Carbonara €12\nMargherita Pizza €10\nCaesar Salad €8\nTiramisu €5",
           "Bus Schedule\nNext bus: 15 minutes\nDestination: City Center\nPlatform 3"
         ],
@@ -1635,74 +1635,7 @@ export default function Index() {
         </div>
       </section>
 
-      {/* PayPal Integration Guide */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
-              💳 PayPal Payment Integration
-            </h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="glass-effect p-6 rounded-lg border border-border/50">
-                <h3 className="text-xl font-semibold mb-4 flex items-center">
-                  <Briefcase className="w-5 h-5 mr-2" />
-                  Setup Instructions
-                </h3>
-                <ol className="space-y-3 text-sm">
-                  <li className="flex items-start space-x-2">
-                    <span className="bg-primary rounded-full w-6 h-6 flex items-center justify-center text-xs text-white font-bold">1</span>
-                    <span>Create PayPal Developer account at <code className="bg-muted px-1 rounded">developer.paypal.com</code></span>
-                  </li>
-                  <li className="flex items-start space-x-2">
-                    <span className="bg-primary rounded-full w-6 h-6 flex items-center justify-center text-xs text-white font-bold">2</span>
-                    <span>Create a new app and get your Client ID & Secret</span>
-                  </li>
-                  <li className="flex items-start space-x-2">
-                    <span className="bg-primary rounded-full w-6 h-6 flex items-center justify-center text-xs text-white font-bold">3</span>
-                    <span>Install PayPal SDK: <code className="bg-muted px-1 rounded">npm install @paypal/react-paypal-js</code></span>
-                  </li>
-                  <li className="flex items-start space-x-2">
-                    <span className="bg-primary rounded-full w-6 h-6 flex items-center justify-center text-xs text-white font-bold">4</span>
-                    <span>Configure environment variables with your PayPal credentials</span>
-                  </li>
-                </ol>
-              </div>
 
-              <div className="glass-effect p-6 rounded-lg border border-border/50">
-                <h3 className="text-xl font-semibold mb-4 flex items-center">
-                  <FileText className="w-5 h-5 mr-2" />
-                  Integration Code
-                </h3>
-                <div className="bg-muted/50 rounded p-3 text-xs font-mono">
-                  <div className="text-green-600 mb-2">// PayPal Wrapper Component</div>
-                  <div>{`<PayPalScriptProvider options={{`}</div>
-                  <div className="ml-2">{`"client-id": "YOUR_CLIENT_ID",`}</div>
-                  <div className="ml-2">{`currency: "USD"`}</div>
-                  <div>{`}}>`}</div>
-                  <div className="mt-2">{`<PayPalButtons`}</div>
-                  <div className="ml-2">{`createOrder={(data, actions) => {`}</div>
-                  <div className="ml-4">{`return actions.order.create({`}</div>
-                  <div className="ml-6">{`purchase_units: [{`}</div>
-                  <div className="ml-8">{`amount: { value: "19.99" }`}</div>
-                  <div className="ml-6">{`}]`}</div>
-                  <div className="ml-4">{`});`}</div>
-                  <div className="ml-2">{`}}`}</div>
-                  <div className="ml-2">{`onApprove={handlePayment}`}</div>
-                  <div>{`/>`}</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-8 p-6 bg-blue-500/10 rounded-lg border border-blue-500/20">
-              <h4 className="font-semibold text-blue-600 mb-2">🚀 Quick Setup for Testing:</h4>
-              <p className="text-sm text-muted-foreground">
-                Use PayPal Sandbox for testing payments. All current pricing buttons will show PayPal integration instructions when clicked.
-                Connect Plan: $19.99/month • Synergy Plan: $49.99/month • Enterprise: Custom pricing via sales team.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20">
