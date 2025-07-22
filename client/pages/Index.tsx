@@ -619,6 +619,52 @@ export default function Index() {
                         <div className="text-sm text-muted-foreground mb-1">Listening...</div>
                         <div className="text-primary">🎙️ Speak now to record your voice</div>
                       </div>
+                    ) : isTranslating || isGeneratingResponse ? (
+                      <>
+                        {recognizedText && (
+                          <div className="bg-primary/10 rounded-lg p-4">
+                            <div className="text-sm text-muted-foreground mb-1">You said (English)</div>
+                            <div>"{recognizedText}"</div>
+                          </div>
+                        )}
+
+                        {translatedText && (
+                          <div className="bg-accent/10 rounded-lg p-4">
+                            <div className="text-sm text-muted-foreground mb-1">Translation ({supportedLanguages.find(l => l.code === selectedLanguage)?.name})</div>
+                            <div>"{translatedText}"</div>
+                          </div>
+                        )}
+
+                        <div className="bg-secondary/20 rounded-lg p-4">
+                          <div className="text-sm text-primary font-medium mb-1">
+                            🤖 {isGeneratingResponse ? 'AI Generating Response...' : 'AI Processing...'}
+                          </div>
+                          <div className="text-sm">
+                            {isGeneratingResponse ?
+                              'Creating a human-like response in your selected language...' :
+                              'Transcribing and translating your voice...'
+                            }
+                          </div>
+                        </div>
+                      </>
+                    ) : aiResponse ? (
+                      <>
+                        <div className="bg-primary/10 rounded-lg p-4">
+                          <div className="text-sm text-muted-foreground mb-1">You said (English)</div>
+                          <div>"{recognizedText}"</div>
+                        </div>
+
+                        <div className="bg-accent/10 rounded-lg p-4">
+                          <div className="text-sm text-muted-foreground mb-1">Translation ({supportedLanguages.find(l => l.code === selectedLanguage)?.name})</div>
+                          <div>"{translatedText}"</div>
+                        </div>
+
+                        <div className="bg-green-500/10 rounded-lg p-4 border-l-4 border-green-500">
+                          <div className="text-sm text-muted-foreground mb-1">🤖 AI Response ({supportedLanguages.find(l => l.code === selectedLanguage)?.name})</div>
+                          <div className="text-green-700 dark:text-green-300">"{aiResponse}"</div>
+                          <div className="text-xs text-muted-foreground mt-2">🔊 Playing audio response...</div>
+                        </div>
+                      </>
                     ) : audioBlob ? (
                       <>
                         <div className="bg-primary/10 rounded-lg p-4">
@@ -627,8 +673,8 @@ export default function Index() {
                         </div>
 
                         <div className="bg-accent/10 rounded-lg p-4">
-                          <div className="text-sm text-muted-foreground mb-1">Ready for Translation</div>
-                          <div>🌐 Click the buttons below to play or export your recording</div>
+                          <div className="text-sm text-muted-foreground mb-1">Ready for AI Translation</div>
+                          <div>🌐 Click "Translate & Get AI Response" to process with AI</div>
                         </div>
                       </>
                     ) : (
@@ -639,13 +685,13 @@ export default function Index() {
                         </div>
 
                         <div className="bg-accent/10 rounded-lg p-4">
-                          <div className="text-sm text-muted-foreground mb-1">Translation (Spanish)</div>
-                          <div>"Hola, mucho gusto en conocerte. ¿Cómo estás hoy?"</div>
+                          <div className="text-sm text-muted-foreground mb-1">AI Response (Spanish)</div>
+                          <div>"¡Hola! Estoy muy bien, gracias por preguntar. Es un placer conocerte. ¿Cómo ha sido tu día?"</div>
                         </div>
 
                         <div className="bg-secondary/20 rounded-lg p-4">
-                          <div className="text-sm text-primary font-medium mb-1">💡 Cultural Tip</div>
-                          <div className="text-sm">Click "Try Recording Now" to test real voice recording!</div>
+                          <div className="text-sm text-primary font-medium mb-1">🌍 AI Translation Available</div>
+                          <div className="text-sm">Record your voice and get instant AI translation + human-like responses in 12+ languages!</div>
                         </div>
                       </>
                     )}
