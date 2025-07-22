@@ -19,6 +19,22 @@ export default function Index() {
   const [recognizedText, setRecognizedText] = useState('');
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
+  // Supported languages for translation
+  const supportedLanguages = [
+    { code: 'es', name: 'Spanish', flag: '🇪🇸' },
+    { code: 'fr', name: 'French', flag: '🇫🇷' },
+    { code: 'de', name: 'German', flag: '🇩🇪' },
+    { code: 'it', name: 'Italian', flag: '🇮🇹' },
+    { code: 'pt', name: 'Portuguese', flag: '🇵🇹' },
+    { code: 'ru', name: 'Russian', flag: '🇷🇺' },
+    { code: 'ja', name: 'Japanese', flag: '🇯🇵' },
+    { code: 'ko', name: 'Korean', flag: '🇰🇷' },
+    { code: 'zh', name: 'Chinese', flag: '🇨🇳' },
+    { code: 'ar', name: 'Arabic', flag: '🇸🇦' },
+    { code: 'hi', name: 'Hindi', flag: '🇮🇳' },
+    { code: 'nl', name: 'Dutch', flag: '🇳🇱' }
+  ];
+
   // Timer effect for recording
   useEffect(() => {
     if (isRecording) {
