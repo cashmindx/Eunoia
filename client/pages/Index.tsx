@@ -85,6 +85,20 @@ export default function Index() {
     }
   };
 
+  // Play recorded audio
+  const playRecordedAudio = () => {
+    if (audioBlob) {
+      const audioUrl = URL.createObjectURL(audioBlob);
+      const audio = new Audio(audioUrl);
+      audio.play().catch(error => {
+        console.error('Error playing audio:', error);
+        alert('Error playing audio. Please try recording again.');
+      });
+    } else {
+      alert('No recording available. Please record something first.');
+    }
+  };
+
   const features = [
     {
       icon: <Mic className="w-6 h-6" />,
