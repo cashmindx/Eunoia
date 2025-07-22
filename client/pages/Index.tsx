@@ -11,6 +11,12 @@ export default function Index() {
   const [recordingTime, setRecordingTime] = useState(0);
   const [mediaRecorder, setMediaRecorder] = useState<MediaRecorder | null>(null);
   const [audioBlob, setAudioBlob] = useState<Blob | null>(null);
+  const [selectedLanguage, setSelectedLanguage] = useState('es'); // Default to Spanish
+  const [isTranslating, setIsTranslating] = useState(false);
+  const [translatedText, setTranslatedText] = useState('');
+  const [aiResponse, setAiResponse] = useState('');
+  const [isGeneratingResponse, setIsGeneratingResponse] = useState(false);
+  const [recognizedText, setRecognizedText] = useState('');
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   // Timer effect for recording
