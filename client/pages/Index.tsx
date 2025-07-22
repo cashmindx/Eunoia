@@ -403,9 +403,15 @@ export default function Index() {
                   </div>
 
                   <div className="mt-6 flex space-x-3">
-                    <Button variant="outline" size="sm" className="flex-1" onClick={() => alert('Audio playback feature coming soon!')}>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="flex-1"
+                      onClick={playRecordedAudio}
+                      disabled={!audioBlob}
+                    >
                       <HeadphonesIcon className="w-4 h-4 mr-2" />
-                      Play Audio
+                      {audioBlob ? 'Play Audio' : 'No Audio'}
                     </Button>
                     <Button variant="outline" size="sm" className="flex-1" onClick={() => alert('Export to spreadsheet feature coming soon!')}>
                       Export
