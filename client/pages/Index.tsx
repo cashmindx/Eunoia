@@ -46,7 +46,7 @@ export default function Index() {
     { code: 'sk', name: 'Slovak', flag: '🇸🇰', region: 'Europe' },
     { code: 'hu', name: 'Hungarian', flag: '🇭🇺', region: 'Europe' },
     { code: 'ro', name: 'Romanian', flag: '🇷🇴', region: 'Europe' },
-    { code: 'bg', name: 'Bulgarian', flag: '🇧🇬', region: 'Europe' },
+    { code: 'bg', name: 'Bulgarian', flag: '🇧���', region: 'Europe' },
     { code: 'hr', name: 'Croatian', flag: '🇭🇷', region: 'Europe' },
     { code: 'sr', name: 'Serbian', flag: '🇷🇸', region: 'Europe' },
     { code: 'sl', name: 'Slovenian', flag: '🇸🇮', region: 'Europe' },
@@ -282,7 +282,7 @@ export default function Index() {
         "Hello, how are you doing today?": [
           "¡Hola! Estoy muy bien, gracias por preguntar. Es un placer conocerte. ¿Cómo ha sido tu día?",
           "¡Qué gusto saludarte! Me siento excelente hoy. ¿Y tú, cómo te encuentras?",
-          "¡Hola! Todo va de maravilla por aquí. Gracias por tu amable saludo. ¿Qué tal tu día?"
+          "¡Hola! Todo va de maravilla por aquí. Gracias por tu amable saludo. ��Qué tal tu día?"
         ]
       },
       'fr': {
@@ -308,7 +308,7 @@ export default function Index() {
       },
       'ja': {
         "Hello, how are you doing today?": [
-          "こんにちは！今日は元気です、お聞きいただきありがとうございます。お会いできて嬉しいです。今日はいかがでしたか？",
+          "こんにちは！今日は���気です、お聞きいただきありがとうございます。お会いできて嬉しいです。今日はいかがでしたか？",
           "こんにちは！今日は素晴らしい気分です。あなたはいかがですか？",
           "こんにちは！こちらはすべて順調です。親切なご挨拶をありがとうございます。今日はどうでしたか？"
         ]
@@ -351,7 +351,7 @@ export default function Index() {
       'hi': {
         "Hello, how are you doing today?": [
           "नमस्ते! मैं आज बहुत अच्छा हूँ, पूछने के लिए धन्यवाद। आपसे मिलकर खुशी हुई। आपका दिन कैसा रहा?",
-          "हैल���! मैं आज बेहतरीन महसूस कर रहा हूँ। और आप कैसे हैं?",
+          "हैलो! मैं आज बेहतरीन महसूस कर रहा हूँ। और आप कैसे हैं?",
           "नमस्ते! यहाँ सब कुछ बहुत अच्छा चल रहा है। आपके मिलनसार अभिवादन के लिए धन्यवाद। आपका दिन कैसा रहा?"
         ]
       },
@@ -359,7 +359,7 @@ export default function Index() {
         "Hello, how are you doing today?": [
           "สวัสดีครับ! วันนี้ผมสบายดีมากครับ ขอบคุณที่ถาม ยินดีที่ได้รู้จักครับ วันนี้เป็นอย่างไรบ้างครับ?",
           "สวัสดี! วันนี้รู้สึกดีมากเลยครับ แล้วคุณล่ะครับ เป็นอย่างไรบ้าง?",
-          "สวัสดีครับ! ที่นี่ทุกอย่างเป็นไปด้วยดีมากครับ ขอบคุณสำหรับคำทักทายที่น่ารักครับ วันนี้เป็นอย่างไรบ้างครับ?"
+          "สวัสดีครับ! ที่นี่ทุกอ���่างเป็นไปด้วยดีมากครับ ขอบคุณสำหรับคำทักทายที่น่ารักครับ วันนี้เป็นอย่างไรบ้างครับ?"
         ]
       },
       'vi': {
@@ -394,7 +394,7 @@ export default function Index() {
         ],
         "Nice to meet you, I'm looking forward to our conversation.": [
           "Dis my plesier! Ek is ook opgewonde om hierdie gesprek met jou te hê. Waaroor wil jy gesels?",
-          "Insgelyks! Ek hou daarvan om nuwe mense te ontmoet. Ek weet ons gaan 'n baie interessante gesprek hê.",
+          "Insgelyks! Ek hou daarvan om nuwe mense te ontmoet. Ek weet ons gaan 'n baie interessante gesprek h��.",
           "Hoe wonderlik om jou te ontmoet! Ek sien ook uit na ons geselsie. Is daar iets spesifieks waaroor jy wil praat?"
         ],
         "Can you help me understand this better?": [
@@ -1275,8 +1275,12 @@ export default function Index() {
                         </div>
 
                         <div className="bg-accent/10 rounded-lg p-4">
-                          <div className="text-sm text-muted-foreground mb-1">AI Response (Spanish)</div>
-                          <div>"¡Hola! Estoy muy bien, gracias por preguntar. Es un placer conocerte. ¿Cómo ha sido tu día?"</div>
+                          <div className="text-sm text-muted-foreground mb-1">AI Response (Multiple Languages)</div>
+                          <div className="space-y-2 text-sm">
+                            <div><strong>🇪🇸 Spanish:</strong> "¡Hola! Estoy muy bien, gracias por preguntar."</div>
+                            <div><strong>🇺🇸 English:</strong> "Hello! I'm doing great today, thanks for asking!"</div>
+                            <div><strong>🇿🇦 Afrikaans:</strong> "Hallo! Ek gaan vandag baie goed, dankie dat jy vra."</div>
+                          </div>
                         </div>
 
                         <div className="bg-secondary/20 rounded-lg p-4">
