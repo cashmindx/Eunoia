@@ -7,6 +7,10 @@ import { useState } from "react";
 
 export default function Index() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isRecording, setIsRecording] = useState(false);
+  const [recordingTime, setRecordingTime] = useState(0);
+  const [mediaRecorder, setMediaRecorder] = useState<MediaRecorder | null>(null);
+  const [audioBlob, setAudioBlob] = useState<Blob | null>(null);
   const features = [
     {
       icon: <Mic className="w-6 h-6" />,
