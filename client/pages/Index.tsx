@@ -76,7 +76,7 @@ export default function Index() {
     { code: 'ta', name: 'Tamil', flag: '🇮🇳', region: 'Asia' },
     { code: 'te', name: 'Telugu', flag: '🇮🇳', region: 'Asia' },
     { code: 'mr', name: 'Marathi', flag: '🇮🇳', region: 'Asia' },
-    { code: 'gu', name: 'Gujarati', flag: '���🇳', region: 'Asia' },
+    { code: 'gu', name: 'Gujarati', flag: '🇮🇳', region: 'Asia' },
     { code: 'kn', name: 'Kannada', flag: '🇮🇳', region: 'Asia' },
     { code: 'ml', name: 'Malayalam', flag: '🇮🇳', region: 'Asia' },
     { code: 'pa', name: 'Punjabi', flag: '🇮🇳', region: 'Asia' },
@@ -338,7 +338,7 @@ export default function Index() {
         "Hello, how are you doing today?": [
           "नमस्ते! मैं आज बहुत अच्छा हूँ, पूछने के लिए धन्यवाद। आपसे मिलकर खुशी हुई। आपका दिन कैसा रहा?",
           "हैलो! मैं आज बेहतरीन महसूस कर रहा हूँ। और आप कैसे हैं?",
-          "नमस्ते! य��ाँ सब कुछ बहुत अच्छा चल रहा है। आपके मिलनसार अभिवादन के लिए धन्यवाद। आपका दिन कैसा रहा?"
+          "नमस्ते! यहाँ सब कुछ बहुत अच्छा चल रहा है। आपके मिलनसार अभिवादन के लिए धन्यवाद। आपका दिन कैसा रहा?"
         ]
       },
       'th': {
@@ -350,7 +350,7 @@ export default function Index() {
       },
       'vi': {
         "Hello, how are you doing today?": [
-          "Xin chào! Hôm nay tôi rất khỏe, cảm ơn bạn đã hỏi. Rất vui được gặp bạn. Ngày hôm nay của b��n thế nào?",
+          "Xin chào! Hôm nay tôi rất khỏe, cảm ơn bạn đã hỏi. Rất vui được gặp bạn. Ngày hôm nay của bạn thế nào?",
           "Chào bạn! Hôm nay tôi cảm thấy tuyệt vời. Còn bạn thì sao?",
           "Xin chào! Mọi thứ ở đây đều tuyệt vời. Cảm ơn lời chào thân thiện của bạn. Ngày của bạn như thế nào?"
         ]
@@ -456,6 +456,103 @@ export default function Index() {
     } finally {
       setIsTranslating(false);
       setIsGeneratingResponse(false);
+    }
+  };
+
+  // Camera and Photo Functions
+  const startCamera = async () => {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({
+        video: { facingMode: 'environment' } // Use back camera if available
+      });
+
+      if (videoRef.current) {
+        videoRef.current.srcObject = stream;
+        setPhotoMode(true);
+      }
+    } catch (error) {
+      alert('Unable to access camera. Please allow camera access and try again.');
+    }
+  };
+
+  const stopCamera = () => {
+    if (videoRef.current && videoRef.current.srcObject) {
+      const tracks = (videoRef.current.srcObject as MediaStream).getTracks();
+      tracks.forEach(track => track.stop());
+      videoRef.current.srcObject = null;
+    }
+    setPhotoMode(false);
+  };
+
+  const capturePhoto = () => {
+    if (videoRef.current && canvasRef.current) {
+      const canvas = canvasRef.current;
+      const video = videoRef.current;
+
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+
+      const ctx = canvas.getContext('2d');
+      if (ctx) {
+        ctx.drawImage(video, 0, 0);
+        const imageData = canvas.toDataURL('image/jpeg');
+        setCapturedImage(imageData);
+        stopCamera();
+        processImageWithOCR(imageData);
+      }
+    }
+  };
+
+  // Simulated OCR processing (in real app, would use Google Vision API)
+  const processImageWithOCR = async (imageData: string) => {
+    setIsProcessingPhoto(true);
+    setExtractedText('');
+    setTranslatedPhoto('');
+
+    try {
+      // Simulate OCR text extraction
+      await new Promise(resolve => setTimeout(resolve, 2000));
+
+      const simulatedOCRTexts = {
+        'casual': [
+          "Welcome to Café Luna\nToday's Special: Cappuccino €3.50\nEspresso €2.00\nCroissant €2.50\nOpen 7AM - 9PM",
+          "Menu\nPasta Carbonara €12\nMargherita Pizza €10\nCaesar Salad €8\nTiramisu €5",
+          "Bus Schedule\nNext bus: 15 minutes\nDestination: City Center\nPlatform 3"
+        ],
+        'business': [
+          "Invoice #INV-2024-001\nAmount Due: $1,250.00\nDue Date: March 15, 2024\nPayment Terms: Net 30",
+          "Meeting Room A\nBooked: 2:00 PM - 4:00 PM\nPresentation: Q4 Results\nContact: extension 1234",
+          "Contract Agreement\nParties: Company A & Company B\nEffective Date: January 1, 2024\nTerms: 12 months"
+        ]
+      };
+
+      const textPool = conversationMode ? simulatedOCRTexts[conversationMode] : simulatedOCRTexts['casual'];
+      const extractedText = textPool[Math.floor(Math.random() * textPool.length)];
+      setExtractedText(extractedText);
+
+      // Translate the extracted text
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      const translated = await translateText(extractedText, selectedLanguage);
+      setTranslatedPhoto(translated);
+
+    } catch (error) {
+      alert('Error processing image. Please try again.');
+    } finally {
+      setIsProcessingPhoto(false);
+    }
+  };
+
+  // Upload image from device
+  const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const imageData = e.target?.result as string;
+        setCapturedImage(imageData);
+        processImageWithOCR(imageData);
+      };
+      reader.readAsDataURL(file);
     }
   };
 
