@@ -372,7 +372,7 @@ export default function Index() {
                 <li><a href="#" className="hover:text-foreground transition-colors">Documentation</a></li>
                 <li><a href="#" className="hover:text-foreground transition-colors">Help Center</a></li>
                 <li><a href="#" className="hover:text-foreground transition-colors">Community</a></li>
-                <li><a href="#" className="hover:text-foreground transition-colors">Contact</a></li>
+                <li><Link to="/contact" className="hover:text-foreground transition-colors">Contact</Link></li>
               </ul>
             </div>
           </div>
