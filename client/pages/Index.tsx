@@ -264,6 +264,27 @@ export default function Index() {
         "Can you help me understand this better?": "Kan jy my help om dit beter te verstaan?",
         "Thank you for your time and assistance.": "Dankie vir jou tyd en hulp.",
         "I hope you have a wonderful day.": "Ek hoop jy het 'n wonderlike dag."
+      },
+      'zu': {
+        "Hello, how are you doing today?": "Sawubona, unjani namuhla?",
+        "Nice to meet you, I'm looking forward to our conversation.": "Kuyajabulisa ukukubona, ngibheke phambili enkulumweni yethu.",
+        "Can you help me understand this better?": "Ungangisiza ukuthi ngiqonde kangcono?",
+        "Thank you for your time and assistance.": "Ngiyabonga ngesikhathi sakho nosizo.",
+        "I hope you have a wonderful day.": "Ngifisa ukuthi ube nosuku olumnandi."
+      },
+      'xh': {
+        "Hello, how are you doing today?": "Molo, unjani namhlanje?",
+        "Nice to meet you, I'm looking forward to our conversation.": "Kuyonwaba ukudibana nawe, ndijonge phambili kwincoko yethu.",
+        "Can you help me understand this better?": "Ungandinceda ukuba ndiqonde ngcono?",
+        "Thank you for your time and assistance.": "Enkosi ngexesha lakho noncedo.",
+        "I hope you have a wonderful day.": "Ndiyathemba ukuba uya kuba nemini entle."
+      },
+      'st': {
+        "Hello, how are you doing today?": "Dumela, o phela jwang kajeno?",
+        "Nice to meet you, I'm looking forward to our conversation.": "Ho thabo ho kopana le wena, ke lebelletse puisano ya rona.",
+        "Can you help me understand this better?": "O ka nthusa hore ke utlwisise botjhaba?",
+        "Thank you for your time and assistance.": "Ke leboga nako ya hao le thuso.",
+        "I hope you have a wonderful day.": "Ke solofela hore o tla ba le letsatsi le monate."
       }
     };
 
@@ -351,7 +372,7 @@ export default function Index() {
       },
       'hi': {
         "Hello, how are you doing today?": [
-          "नमस्ते! मैं आज बहुत अच्छा हूँ, पूछने के लिए धन्यवाद। आपसे मिलकर खुशी हुई। आपका द��न कैसा रहा?",
+          "नमस्ते! मैं आज बहुत अच्छा हूँ, पूछने के लिए धन्यवाद। आपसे मिलकर खुशी हुई। आपका दिन कैसा रहा?",
           "हैलो! मैं आज बेहतरीन महसूस कर रहा हूँ। और आप कैसे हैं?",
           "नमस्ते! यहाँ सब कुछ बहुत अच्छा चल रहा है। आपके मिलनसार अभिवादन के लिए धन्यवाद। आपका दिन कैसा रहा?"
         ]
